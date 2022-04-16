@@ -13,15 +13,11 @@ public class Calculator {
     }
 
 
-    public  double div(int a, int b){
-
-        if(b==0){
-            return 0;
-        }
-
-        return (double) a/b;
+    public int div(int a, int b){
 
 
+        System.out.println(a/b);
+        return  a/b;
 
     }
 
@@ -30,6 +26,7 @@ public class Calculator {
         if(b==0){
             return 0;
         }
+        System.out.println(a/b);
         return a/b;
 
 
