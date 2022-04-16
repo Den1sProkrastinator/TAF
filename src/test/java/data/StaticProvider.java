@@ -20,4 +20,23 @@ public class StaticProvider {
                 {11,0,0 , "тут должна быть ваша арифметик ошибка "},
         };
     }
+    @DataProvider(name = "dataForTestDivDouble")
+    public static Object[][] dataForTestDivDouble(){
+        return new Object[][]{
+                {12.0,2.0,6.0, "Вероно"},
+                {13.0, 2.0, 6.5,"Верно"},
+
+        };
+    }
+
+    @DataProvider(name = "dataProviderForRetryTest")
+    public static Object[][] dataProviderForRetryTest(){
+        return new Object[][]{
+                {1,0,1,"ошибка"},
+                {2,0,1,"ошибка"},
+                {3,0,1,"ошибка"},
+                {4,0,1,"ошибка"},
+                {5,5,1,"не должно быть ошибки"}
+        };
+    }
 }

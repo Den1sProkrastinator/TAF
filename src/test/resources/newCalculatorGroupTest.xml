@@ -4,8 +4,7 @@
     <test name="Groups Test">
         <groups>
              <define name="group 1">
-                 <include name="smoke">
-                 </include>
+                 <include name="smoke"></include>
              </define>
             <define name="group 2">
                 <include name="regression"></include>
@@ -16,10 +15,11 @@
             </define>
             <run>
                 <include name="group 1"></include>
+                <include name="group 2"></include>
             </run>
         </groups>
         <classes>
-            <class name="GroupsTests"></class>
+            <class name="NewCalculatorGroupTest"></class>
         </classes>
     </test>
 </suite>
