@@ -48,14 +48,29 @@ public class SmokeTest {
         driver.get("http://13gp.by/informatsiya/meditsinskie-kalkulyatory/995-raschet-skorosti-klubochkovoj-filtratsii-skf");
 
         WebElement selectWebElement = driver.findElement(By.id("oSex"));
+        WebElement kreatin = driver.findElement(By.id("oCr"));
+        WebElement age=driver.findElement(By.id("oAge"));
+        WebElement weight=driver.findElement(By.id("oWeight"));
+        WebElement height=driver.findElement(By.id("oHeight"));
+        WebElement butom =  driver.findElement(By.cssSelector("input[type=\"button\" i]"));
 
         Select   selectSex = new Select(selectWebElement);
+
         selectSex.selectByIndex(1);
         Thread.sleep(2000);
-        selectSex.selectByValue("0");
+
+        kreatin.sendKeys("80");
         Thread.sleep(2000);
-        selectSex.selectByVisibleText("женский");
+        age.sendKeys("38");
         Thread.sleep(2000);
+        weight.sendKeys("55");
+        Thread.sleep(2000);
+        height.sendKeys("163");
+        Thread.sleep(2000);
+        butom.click();
+        Thread.sleep(20000);
+
+
 
     }
 
