@@ -1,5 +1,3 @@
-package tests;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -13,7 +11,7 @@ public class AdvancedDriver {
 
     public ChromeOptions getChromeOptions(){
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setHeadless(false);
+        chromeOptions.setHeadless(ReadProperties.isHeadless());
         chromeOptions.addArguments("--disable-gpu");
         //chromeOptions.addArguments("--window-size=1920,1200");
         chromeOptions.addArguments("--ignore-certificate-errors");
