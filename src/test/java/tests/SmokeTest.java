@@ -20,7 +20,7 @@ public class SmokeTest {
     }
 
     @Test
-    public void validateSKF() throws InterruptedException {
+    public void electricityCalculator() throws InterruptedException {
          driver.get("https://kermi-fko.ru/raschety/Calc-Rehau-Solelec.aspx");
 
         WebElement width = driver.findElement(By.id("el_f_width"));
@@ -47,7 +47,12 @@ public class SmokeTest {
         button.click();
         Thread.sleep(3000);
 
-//        Assert.assertEquals(width.getText(),"Поверхность тела:1.58 (кв.м)");
+
+        WebElement floor_cable_power = driver.findElement(By.id("floor_cable_power"));
+        WebElement spec_floor_cable_power = driver.findElement(By.id("spec_floor_cable_power"));
+
+      Assert.assertEquals(floor_cable_power.getText(),"13");
+      Assert.assertEquals(spec_floor_cable_power.getText(),"1");
 
 
 
