@@ -39,15 +39,36 @@ public class SmokeTest {
     public void validateSKF() throws InterruptedException {
         driver.get("http://13gp.by/informatsiya/meditsinskie-kalkulyatory/995-raschet-skorosti-klubochkovoj-filtratsii-skf");
 
-
         WebElement selectWebElement = driver.findElement(By.id("oSex"));
         Select selectSex = new Select(selectWebElement);
         selectSex.selectByIndex(1);
+
+        WebElement kreatin = driver.findElement(By.id("oCr"));
+        WebElement age = driver.findElement(By.id("oAge"));
+        WebElement weight = driver.findElement(By.id("oWeight"));
+        WebElement height = driver.findElement(By.id("oHeight"));
+        WebElement button = driver.findElement(By.cssSelector("input[type=\"button\" i]"));
+
+        kreatin.sendKeys("80");
         Thread.sleep(2000);
-        selectSex.selectByValue("0");
+        age.sendKeys("38");
         Thread.sleep(2000);
-        selectSex.selectByVisibleText("женский");
+        weight.sendKeys("55");
         Thread.sleep(2000);
+        height.sendKeys("163");
+        Thread.sleep(2000);
+        button.click();
+        Thread.sleep(2000);
+
+        WebElement txtMDRD=driver.findElement(By.id("txtMDRD"));
+        WebElement txtMDRD1=driver.findElement(By.id("txtMDRD1"));
+        WebElement txtCG=driver.findElement(By.id("txtCG"));
+        WebElement txtBSA=driver.findElement(By.id("txtBSA"));
+
+        Assert.assertEquals(txtMDRD.getText(), "MDRD: 74 (мл/мин/1,73кв.м)");
+        Assert.assertEquals(txtMDRD.getText(), "ХБП: 2 стадия (при наличии почечногоповреждения)");
+        Assert.assertEquals(txtMDRD.getText(), "Cockroft-Gault: 70 (мл/мин)");
+        Assert.assertEquals(txtMDRD.getText(), "Поверхность тела:1.58 (кв.м)");
     }
 
 
