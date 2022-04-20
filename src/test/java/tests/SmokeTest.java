@@ -25,16 +25,29 @@ public class SmokeTest {
 
         WebElement width = driver.findElement(By.id("el_f_width"));
         WebElement length = driver.findElement(By.id("el_f_lenght"));
-        WebElement length1 = driver.findElement(By.id("el_f_lenght"));
+        WebElement typeOfRoom = driver.findElement(By.id("room_type"));
 
+        Select   selectTypeOfRoom = new Select(typeOfRoom);
+        WebElement typeOfHeating = driver.findElement(By.id("heating_type"));
+        Select selectTypeOfHeating= new Select(typeOfHeating);
 
-//        Select   selectSex = new Select(selectWebElement);
+        WebElement heatLoss = driver.findElement(By.id("el_f_losses"));
+        WebElement button = driver.findElement(By.name("button"));
 
-//        selectSex.selectByIndex(1);
-
+        width.sendKeys("3");
         Thread.sleep(2000);
+        length.sendKeys("4");
+        Thread.sleep(2000);
+        selectTypeOfRoom.selectByIndex(1);
+        Thread.sleep(2000);
+        selectTypeOfHeating.selectByIndex(1);
+        Thread.sleep(2000);
+        heatLoss.sendKeys("12");
+        Thread.sleep(2000);
+        button.click();
+        Thread.sleep(3000);
 
-        Assert.assertEquals(width.getText(),"Поверхность тела:1.58 (кв.м)");
+//        Assert.assertEquals(width.getText(),"Поверхность тела:1.58 (кв.м)");
 
 
 
