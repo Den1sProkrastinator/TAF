@@ -50,15 +50,15 @@ public class SmokeTest {
         WebElement button = driver.findElement(By.cssSelector("input[type=\"button\" i]"));
 
         kreatin.sendKeys("80");
-        Thread.sleep(2000);
+
         age.sendKeys("38");
-        Thread.sleep(2000);
+
         weight.sendKeys("55");
-        Thread.sleep(2000);
+
         height.sendKeys("163");
-        Thread.sleep(2000);
+
         button.click();
-        Thread.sleep(2000);
+
 
         WebElement txtMDRD=driver.findElement(By.id("txtMDRD"));
         WebElement txtMDRD1=driver.findElement(By.id("txtMDRD1"));
@@ -66,9 +66,9 @@ public class SmokeTest {
         WebElement txtBSA=driver.findElement(By.id("txtBSA"));
 
         Assert.assertEquals(txtMDRD.getText(), "MDRD: 74 (мл/мин/1,73кв.м)");
-        Assert.assertEquals(txtMDRD.getText(), "ХБП: 2 стадия (при наличии почечногоповреждения)");
-        Assert.assertEquals(txtMDRD.getText(), "Cockroft-Gault: 70 (мл/мин)");
-        Assert.assertEquals(txtMDRD.getText(), "Поверхность тела:1.58 (кв.м)");
+        Assert.assertEquals(txtMDRD1.getText(), "ХБП: 2 стадия (при наличии почечного повреждения)");
+        Assert.assertEquals(txtCG.getText(), "Cockroft-Gault: 70 (мл/мин)");
+        Assert.assertEquals(txtBSA.getText(), "Поверхность тела:1.58 (кв.м)");
     }
 
 
