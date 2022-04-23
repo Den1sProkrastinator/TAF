@@ -53,9 +53,12 @@ public class SmokeTestCalculatorsLaminat {
 
 
         WebElement calculateButton = driver.findElement(By.cssSelector(".calc-btn-div"));
-        calculateButton.click();
-//        Thread.sleep(2000);
 
+        calculateButton.click();
+        Thread.sleep(20000);
+        // ниже вознилки проблемы с локаторами
+
+//        Thread.sleep(2000);
 //        WebElement numBoards= driver.findElement(By.cssSelector(".calc-result div:first-child"));
 //
 //        Assert.assertEquals(numBoards.getAttribute("innerText"), "53");
