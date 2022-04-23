@@ -3,6 +3,7 @@ package tests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -53,9 +54,14 @@ public class SmokeTestCalculatorsLaminat {
 
         WebElement calculateButton = driver.findElement(By.cssSelector(".calc-btn-div"));
         calculateButton.click();
-        Thread.sleep(2000);
+//        Thread.sleep(2000);
 
-//        WebElement
+//        WebElement numBoards= driver.findElement(By.cssSelector(".calc-result div:first-child"));
+//
+//        Assert.assertEquals(numBoards.getAttribute("innerText"), "53");
+//        /*WebElement numBox= driver.findElement(By.cssSelector(".calc-result div:nth-child(2)"));
+//        Assert.assertEquals(numBox.getAttribute("value"), "Количество упаковок ламината: 7");*/
+        Thread.sleep(20000);
 
 
 
