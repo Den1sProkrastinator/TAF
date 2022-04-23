@@ -35,24 +35,24 @@ public class SmokeTest {
         WebElement button = driver.findElement(By.name("button"));
 
         width.sendKeys("3");
-        Thread.sleep(2000);
+
         length.sendKeys("4");
-        Thread.sleep(2000);
+
         selectTypeOfRoom.selectByIndex(1);
-        Thread.sleep(2000);
+
         selectTypeOfHeating.selectByIndex(1);
-        Thread.sleep(2000);
+
         heatLoss.sendKeys("12");
-        Thread.sleep(2000);
+
         button.click();
-        Thread.sleep(3000);
+
 
 
         WebElement floor_cable_power = driver.findElement(By.id("floor_cable_power"));
         WebElement spec_floor_cable_power = driver.findElement(By.id("spec_floor_cable_power"));
 
-      Assert.assertEquals(floor_cable_power.getText(),"13");
-      Assert.assertEquals(spec_floor_cable_power.getText(),"1");
+      Assert.assertEquals(floor_cable_power.getAttribute("value"),"13");
+      Assert.assertEquals(spec_floor_cable_power.getAttribute("value"),"1");
 
 
 

@@ -45,13 +45,17 @@ public class SmokeTestCalculatorsLaminat {
         WebElement n_packing= driver.findElement(By.id("n_packing"));
         n_packing.clear();
         n_packing.sendKeys("8");
-        Thread.sleep(2000);
+
 
         WebElement radioButton = driver.findElement(By.id("direction-laminate-id1"));
         radioButton.click();
+
+
+        WebElement calculateButton = driver.findElement(By.cssSelector(".calc-btn-div"));
+        calculateButton.click();
         Thread.sleep(2000);
 
-        WebElement calculateButton = driver.findElement();
+//        WebElement
 
 
 
