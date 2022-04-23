@@ -55,16 +55,18 @@ public class SmokeTestCalculatorsLaminat {
         WebElement calculateButton = driver.findElement(By.cssSelector(".calc-btn-div"));
 
         calculateButton.click();
-        Thread.sleep(20000);
+
+
+
         // ниже вознилки проблемы с локаторами
 
-//        Thread.sleep(2000);
-//        WebElement numBoards= driver.findElement(By.cssSelector(".calc-result div:first-child"));
-//
-//        Assert.assertEquals(numBoards.getAttribute("innerText"), "53");
+
+        WebElement numBoards= driver.findElement(By.cssSelector
+                ("div [style='padding:5px 0;font-size:22px; color:#C80303; font-weight:bold;']"));
+        Assert.assertEquals(numBoards.getText(), "53");
 //        /*WebElement numBox= driver.findElement(By.cssSelector(".calc-result div:nth-child(2)"));
-//        Assert.assertEquals(numBox.getAttribute("value"), "Количество упаковок ламината: 7");*/
-        Thread.sleep(20000);
+//        Assert.assertEquals(numBox.getAttribute("value"), "Количество упаковок ламината: 7");
+//        Thread.sleep(20000);
 
 
 
