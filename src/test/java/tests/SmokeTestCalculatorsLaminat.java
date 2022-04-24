@@ -9,6 +9,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import services.BrowsersService;
 
+import java.time.Duration;
+
 public class SmokeTestCalculatorsLaminat {
     private WebDriver driver;
 
@@ -56,6 +58,7 @@ public class SmokeTestCalculatorsLaminat {
 
         calculateButton.click();
 
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 
         // ниже вознилки проблемы с локаторами
@@ -64,9 +67,12 @@ public class SmokeTestCalculatorsLaminat {
         WebElement numBoards= driver.findElement(By.cssSelector
                 ("div [style='padding:5px 0;font-size:22px; color:#C80303; font-weight:bold;']"));
         Assert.assertEquals(numBoards.getText(), "53");
-//        /*WebElement numBox= driver.findElement(By.cssSelector(".calc-result div:nth-child(2)"));
-//        Assert.assertEquals(numBox.getAttribute("value"), "Количество упаковок ламината: 7");
-//        Thread.sleep(20000);
+
+        WebElement laminatsValue= driver.findElement(By.cssSelector
+                ("div [style='padding:5px 0;font-size:18px; color:#0E8C19; font-weight:bold;']"));
+        Assert.assertEquals(laminatsValue.getText(), "7");
+
+
 
 
 
