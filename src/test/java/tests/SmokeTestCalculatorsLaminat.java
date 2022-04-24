@@ -61,7 +61,6 @@ public class SmokeTestCalculatorsLaminat {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 
-        // ниже вознилки проблемы с локаторами
 
 
         WebElement numBoards= driver.findElement(By.cssSelector
