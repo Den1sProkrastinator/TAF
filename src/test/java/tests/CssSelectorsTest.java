@@ -57,7 +57,7 @@ public class CssSelectorsTest {
 
         //поиск всех р элементов которые идут сразу за тегом ul
 
-        Assert.assertEquals(6,driver.findElements(By.cssSelector("ul+p")).size());
+        Assert.assertEquals(1,driver.findElements(By.cssSelector("ul+p")).size());
 
         //поиск всех  элементов с тегом div которые является братьями элементу с тегом p
 
