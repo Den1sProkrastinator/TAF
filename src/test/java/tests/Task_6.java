@@ -22,21 +22,24 @@ public class Task_6 extends ReadProperties {
     }
 
     @Test
-    public void login() throws InterruptedException {
+    public void  login() throws InterruptedException {
 
         driver.get(getUrl());
 
-        WebElement myLogin = driver.findElement(By.id("user-name"));
+        WebElement myLogin = getElementById("user-name");
         myLogin.sendKeys(username());
+
+        Thread.sleep(2000);
+
 
 
         WebElement myPassword = driver.findElement(By.id("password"));
         myPassword.sendKeys(password());
-
+        Thread.sleep(2000);
 
         WebElement button = driver.findElement(By.id("login-button"));
         button.click();
-
+        Thread.sleep(2000);
 
         //add to card
 
@@ -46,14 +49,14 @@ public class Task_6 extends ReadProperties {
         WebElement cardButton = driver.findElement(By.cssSelector(".shopping_cart_link"));
         cardButton.click();
 
-
+        Thread.sleep(2000);
         // item check
 
         Assert.assertEquals(driver.findElement(By.cssSelector(".inventory_item_name")).getText(),
                 "Sauce Labs Backpack");
 
         Assert.assertEquals(driver.findElement(By.cssSelector(".inventory_item_price")).getText(), "$29.99");
-
+        Thread.sleep(2000);
 
     }
 
@@ -112,6 +115,12 @@ public class Task_6 extends ReadProperties {
 
         // поиск по [attribute*=value] не получилось сделать этот пункт
         Assert.assertTrue(driver.findElement(By.cssSelector("[class*=Backpack]")).isDisplayed());
+    }
+
+    WebElement myLogin = driver.findElement(By.id("user-name"));
+
+    private WebElement getElementById(String elementId){
+        return driver.findElement(By.id(elementId));
     }
 
 
