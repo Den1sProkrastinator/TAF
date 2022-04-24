@@ -63,43 +63,55 @@ public class Task_6 extends ReadProperties {
 
         WebElement myLogin = driver.findElement(By.id("user-name"));
         myLogin.sendKeys(username());
-
-
         WebElement myPassword = driver.findElement(By.id("password"));
         myPassword.sendKeys(password());
-
-
         WebElement button = driver.findElement(By.id("login-button"));
         button.click();
 
 
-
-
-
         //  поиск по айди
-
-        Assert.assertTrue(driver.findElement(By.cssSelector("#remove-sauce-labs-backpack")).isDisplayed());
-
-
+        Assert.assertTrue(driver.findElement(By.id("item_4_title_link")).isDisplayed());
         // поиск по  name
-
-        Assert.assertTrue(driver.findElement(By.name("remove-sauce-labs-backpack")).isDisplayed());
-
+        Assert.assertTrue(driver.findElement(By.name("add-to-cart-sauce-labs-bike-light")).isDisplayed());
         //поиск  по  className
+        Assert.assertTrue(driver.findElement(By.className("btn")).isDisplayed());
+        //поиск оп tagName
+        Assert.assertTrue(driver.findElement(By.tagName("button")).isDisplayed());
+        //поиск по link ext
+        Assert.assertTrue(driver.findElement(By.linkText("Sauce Labs Backpack")).isDisplayed());
+        //поиск по partialLinkText
+        Assert.assertTrue(driver.findElement(By.partialLinkText("Labs Backpack")).isDisplayed());
 
-        Assert.assertTrue(driver.findElement(By.cssSelector(".product_sort_container")).isDisplayed());
+        //CSS
+        //поиск по .class
+        Assert.assertTrue(driver.findElement(By.cssSelector(".inventory_item_description")).isDisplayed());
+        //.class1.class2
+        Assert.assertTrue(driver.findElement(By.cssSelector(".btn.btn_primary.btn_small")).isDisplayed());
+
+        // поиск по .class1 .class2
+        Assert.assertTrue(driver.findElement(By.cssSelector(".inventory_item_description .inventory_item_label")).isDisplayed());
 
 
+        // поиск по #id
+        Assert.assertTrue(driver.findElement(By.cssSelector("#item_4_title_link")).isDisplayed());
+        // поиск по tagName
+        Assert.assertTrue(driver.findElement(By.cssSelector("button")).isDisplayed());
+        // поиск по tagname.class
+        Assert.assertTrue(driver.findElement(By.cssSelector("button.btn")).isDisplayed());
+        // поиск по [attribute=value]
+        Assert.assertTrue(driver.findElement(By.cssSelector("[value='az']")).isDisplayed());
+        // поиск по [attribute~=value]
+        Assert.assertTrue(driver.findElement(By.cssSelector("[value~='az']")).isDisplayed());
+        // поиск по  [attribute|=value]
+        Assert.assertTrue(driver.findElement(By.cssSelector("[value|=lohi]")).isDisplayed());
+        // поиск по [attribute^=value]
+        Assert.assertTrue(driver.findElement(By.cssSelector("[class^=bm]")).isDisplayed());
+        // поиск по [attribute$=value]
+        Assert.assertTrue(driver.findElement(By.cssSelector("[class$=button]")).isDisplayed());
 
-        //поиск оп tagname
 
-        Assert.assertTrue(driver.findElement(By.cssSelector("a")).isDisplayed());
-
-        //поиск по teg  и значению из атрибута class
-
-
-
-
+        // поиск по [attribute*=value] не получилось сделать этот пункт
+        Assert.assertTrue(driver.findElement(By.cssSelector("[class*=Backpack]")).isDisplayed());
     }
 
 
