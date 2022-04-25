@@ -31,6 +31,7 @@ public class SmokeTest {
         WebElement typeOfHeating = driver.findElement(By.id("heating_type"));
         Select selectTypeOfHeating= new Select(typeOfHeating);
 
+
         WebElement heatLoss = driver.findElement(By.id("el_f_losses"));
         WebElement button = driver.findElement(By.name("button"));
 

@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.time.Duration;
+
 public class BrowsersService {
     private WebDriver driver = null;
 
@@ -26,6 +28,8 @@ public class BrowsersService {
                 chromeOptions.addArguments("--start-maximized");
 
                 driver = new ChromeDriver(chromeOptions);
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
 
                 break;
             case "firefox":
