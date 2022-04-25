@@ -1,5 +1,6 @@
 package tests;
 
+import configuration.ReadProperties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,7 +30,7 @@ public class SmokeTestCalculatorsLaminat {
     @Test
     public void laminatCalculator() throws InterruptedException {
 
-        driver.get("https://calc.by/building-calculators/laminate.html");
+        driver.get(ReadProperties.getUrl());
 
 
         WebElement roomLenght = driver.findElement(By.id("ln_room_id"));
