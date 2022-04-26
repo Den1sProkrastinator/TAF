@@ -3,15 +3,76 @@ package tests;
 import configuration.ReadProperties;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import services.BrowsersService;
 
-public class xPathSelectors  {
+import static configuration.ReadProperties.*;
+
+public class xPathSelectors {
     private WebDriver driver;
 
+    @BeforeMethod
+    public void setup() {
+        driver = new BrowsersService().getDriver();
+
+    }
+
+
+    @AfterMethod
+    public void tearDown() {
+
+        driver.quit();
+    }
+
+
     @Test
-    public void basicXPathSelectors() {
-        driver.get(ReadProperties.getUrl());
+    public void xPathSelectors() {
+        driver.get(getUrl());
+
+        WebElement myLogin = driver.findElement(By.id("user-name"));
+        myLogin.sendKeys(username());
+        WebElement myPassword = driver.findElement(By.id("password"));
+        myPassword.sendKeys(password());
+        WebElement button = driver.findElement(By.id("login-button"));
+        button.click();
+
+        //Поиск по атрибуту
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@id='contents_wrapper']")).isDisplayed());
+
+        //Поиск по тексту
+        Assert.assertTrue(driver.findElement(By.xpath("//*[text()='Name (A to Z)']")).isDisplayed());
+
+        //Поиск по частичному совпадению атрибута
+        Assert.assertTrue(driver.findElement(By.xpath("//*[starts-with(@class, 'inventory')]")).isDisplayed());
+
+        //Поиск по частичному совпадению текста
+        Assert.assertTrue(driver.findElement(By.xpath("//*[contains(text(), 'Add ')]")).isDisplayed());
+
+        //Поиск по ancestor
+        Assert.assertTrue(driver.findElement(By.xpath("//option/ancestor::select")).isDisplayed());
+
+        //Поиск по descendant
+        Assert.assertTrue(driver.findElement(By.xpath("//select/descendant::option")).isDisplayed());
+
+        //Поиск по following(не работает)
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@class='dialog-title']/following::form")).isDisplayed());
+        //Поиск по parent(не работает)
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@value]/parent::value")).isDisplayed());
+        //Поиск по  preceding (не работает)
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@class='dialog-title']/preceding::form")).isDisplayed());
+
+        // Поиск элемента с условием AND
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@alt='Sauce Labs Bolt T-Shirt' and @class='inventory_item_img']")).isDisplayed());
+    }
+
+
+    @Test
+    public void basicXPathSelectors1() {
+        driver.get(getUrl());
 
         // Абсолютный xpath
         Assert.assertTrue(driver.findElement(By.xpath("/html/body/div[4]/div/div[1]/div[1]/div/div[2]")).isDisplayed());
@@ -34,7 +95,7 @@ public class xPathSelectors  {
         // Поиск элемента у которого есть аттрибут id cо значением top-logo
         Assert.assertTrue(driver.findElement(By.xpath("//*[@id = 'top-logo']")).isDisplayed());
 
-        // Поиск элемента у которого есть аттрибут method cо значением и фттрибут target со значением
+        // Поиск элемента у которого есть аттрибут method cо значением и aтрибут target со значением
         Assert.assertTrue(driver.findElement(By.xpath("//*[@method='post' and @target='_blank']")).isDisplayed());
 
         // Поиск элемента у которого значение аттрибута начинается с
@@ -52,11 +113,14 @@ public class xPathSelectors  {
 
         // Поиск элемента по индексу
         Assert.assertTrue(driver.findElement(By.xpath("//div[@class = 'summary-links text-secondary']/a[2]")).isDisplayed());
+
+
+
     }
 
     @Test
     public void axesXPathTest() {
-        driver.get(ReadProperties.getUrl());
+        driver.get(getUrl());
 
         // Поиск родителя у элемента с тэгом h1
         Assert.assertTrue(driver.findElement(By.xpath("//h1/..")).isDisplayed());
@@ -75,7 +139,7 @@ public class xPathSelectors  {
         Assert.assertTrue(driver.findElement(By.xpath("//*[@class='dialog-title']/following-sibling::form")).isDisplayed());
 
         //Использование preceding- Выбирает все узлы, которые появляются перед текущим узлом в документе
-        Assert.assertTrue(driver.findElement(By.xpath("//*[@class=\"dialog-title\"]/preceding::form")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//*[@class='dialog-title']/preceding::form")).isDisplayed());
 
         //Использование preceding-sibling - Выбирает все узлы одного уровня до текущего узла
         Assert.assertTrue(driver.findElement(By.xpath("//*[@class='dialog-title']/preceding-sibling::form")).isDisplayed());
