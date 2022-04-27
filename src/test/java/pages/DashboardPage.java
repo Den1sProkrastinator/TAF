@@ -19,6 +19,7 @@ public class DashboardPage extends BasePage {
         topMenuPage = new TopMenuPage(driver);
     }
 
+
     @Override
     protected By getPageIdentifier() {
         return headerTitleLabelLocator;
