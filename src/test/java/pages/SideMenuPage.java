@@ -4,15 +4,15 @@ import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class TopMenuPage extends BasePage {
-    private By topPanelLocator = By.className("top-panel");
+public class SideMenuPage extends BasePage {
+    private By sidebarLocator = By.id("sidebar");
 
-    public TopMenuPage(WebDriver driver) {
+    public SideMenuPage(WebDriver driver) {
         super(driver);
     }
 
     @Override
     protected By getPageIdentifier() {
-        return topPanelLocator;
+        return sidebarLocator;
     }
 }
