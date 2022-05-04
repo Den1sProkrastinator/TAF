@@ -63,7 +63,7 @@ public class XPathSelectors {
         //Поиск по parent
         Assert.assertTrue(driver.findElement(By.xpath("//button/parent::div")).isDisplayed());
 
-        //Поиск по  preceding (не работает)
+        //Поиск по  preceding
         Assert.assertTrue(driver.findElement(By.xpath("//*[@class='inventory_item_price']/preceding::button")).isDisplayed());
 
         // Поиск элемента с условием AND
