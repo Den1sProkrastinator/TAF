@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class xPathSelectors  {
+public class XPathSelectors  {
     private WebDriver driver;
 
     @Test
