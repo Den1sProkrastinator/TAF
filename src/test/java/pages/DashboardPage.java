@@ -10,8 +10,11 @@ public class DashboardPage extends BasePage {
 
     public TopMenuPage topMenuPage;
 
+
+
     // Блок описания селекторов для элементов
     private By headerTitleLabelLocator = By.xpath("//div[contains(@class, 'content-header-title') and contains(text(), 'Dashboard')]");
+    private String projectNameLocator="//div/a[@style and text()='Replace']";
 
     public DashboardPage(WebDriver driver) {
         super(driver);
@@ -30,7 +33,11 @@ public class DashboardPage extends BasePage {
     }
 
     // Блок атомарных методов
-    public WebElement getHeaderTitleLabel() {
-        return driver.findElement(headerTitleLabelLocator);
+
+
+    public WebElement getProjectByName(String projectName){
+        return driver.findElement(By.xpath(projectNameLocator.replace("Replace",projectName)));
+
     }
+
 }
