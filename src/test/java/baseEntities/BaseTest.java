@@ -5,10 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import services.BrowsersService;
-import steps.DashBoardStep;
-import steps.LoginStep;
-import steps.NavigationStep;
-import steps.ProjectsStep;
+import steps.*;
 
 public class BaseTest {
     protected WebDriver driver;
@@ -19,13 +16,18 @@ public class BaseTest {
 
     protected DashBoardStep dashBoardStep;
 
+    protected MilestonesStep milestonesStep;
+
     @BeforeMethod
     public void setup() {
+
         driver = new BrowsersService().getDriver();
         loginStep = new LoginStep(driver);
         navigationStep = new NavigationStep(driver);
         projectsStep = new ProjectsStep(driver);
         dashBoardStep = new DashBoardStep(driver);
+        milestonesStep = new MilestonesStep(driver);
+
 
         driver.get(ReadProperties.getUrl());
     }

@@ -14,4 +14,8 @@ public class NavigationStep extends BaseStep {
         projectsPage.openPageByUrl();
         return projectsPage;
     }
+
+
+
+
 }

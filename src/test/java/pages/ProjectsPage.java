@@ -8,15 +8,14 @@ import org.openqa.selenium.WebElement;
 public class ProjectsPage extends BasePage {
     private final static String pagePath = "/index.php?/admin/projects/overview";
 
-    public SideMenuPage sideMenuPage;
-
     private By headerTitleLabelName = By.xpath(
             "//div[contains(@class, 'content-header-title') and contains(text(), '')]");
+    private  String  navigationName ="//div//li/a[text()='Replace']";
+    private By addMilestonesLocator = By.xpath("//div[@class='button-group']/a[@class='button button-left button-add']");
 
     public ProjectsPage(WebDriver driver) {
         super(driver);
 
-        sideMenuPage = new SideMenuPage(driver);
     }
 
     @Override
@@ -28,10 +27,19 @@ public class ProjectsPage extends BasePage {
         super.openPageByUrl(pagePath);
     }
 
-    public WebElement getProjectByNameLocator(){
 
+    public WebElement getProjectByNameLocator(){
         return   driver.findElement(headerTitleLabelName);
     }
+
+
+    public WebElement getMenuByName(String menuName){
+        return driver.findElement(By.xpath(navigationName.replace("Replace",menuName)));
+    }
+    public WebElement getAddMilestones(){
+        return  driver.findElement(addMilestonesLocator);
+    }
+
 
 
 

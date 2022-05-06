@@ -2,6 +2,7 @@ package steps;
 
 import baseEntities.BaseStep;
 import org.openqa.selenium.WebDriver;
+import pages.MilestonesPage;
 
 public class ProjectsStep extends BaseStep {
 
@@ -10,7 +11,15 @@ public class ProjectsStep extends BaseStep {
         super(driver);
     }
 
+    public void menuNavigation(String menuName){
+        projectsPage.getMenuByName(menuName).click();
 
+    }
+
+    public MilestonesPage addMilestones(){
+        projectsPage.getAddMilestones().click();
+        return milestonesPage;
+    }
 
 
 
