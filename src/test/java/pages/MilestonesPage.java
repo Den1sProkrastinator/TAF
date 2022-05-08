@@ -9,25 +9,31 @@ import org.openqa.selenium.WebElement;
 public class MilestonesPage extends BasePage {
     private final static String pagePath="https://shootsmashchopstomp1.testrail.io/index.php?/milestones/add/1";
 
-
     //локаторы
-    private By formLocator = By.id("form");
+
     private By nameLocator = By.id("name");
     private By referenceLocator = By.id("reference");
     private By descriptionDisplayLocator = By.id("description_display");
-    private By startOnLocator = By.id("start_on");
-    private By dueOnLocator = By.id("due_on");
-    private By isCompletedLocator = By.id("is_completed");
+    private By startDateLocator = By.id("start_on");
+    private By endDateLocator = By.id("due_on");
+
+//    private By isCompletedLocator = By.id("is_completed");
     private By addMilestoneButtonLocator = By.id("accept");
-    private By cancelButtonLocator = By.className("button button-left button-negative button-cancel milestone-form-cancel");
+
+    private By cancelButtonLocator = By.cssSelector(".button.button-left.button-negative.button-cancel.milestone-form-cancel");
+
     private By successAddedLocator = By.xpath("//div[text()='Successfully added the new milestone.']");
+
+    private String milestonesNameLocator = "//div/a[.='Replace']";
+
+
     public MilestonesPage(WebDriver driver) {
         super(driver);
     }
 
     @Override
     protected By getPageIdentifier() {
-        return formLocator;
+        return successAddedLocator;
     }
 
 
@@ -38,20 +44,24 @@ public class MilestonesPage extends BasePage {
     public WebElement getName(){
        return driver.findElement(nameLocator);
     }
-    public WebElement getReferenceLocator(){
+    public WebElement getReference(){
        return driver.findElement(referenceLocator);
     }
-    public WebElement getDescriptionDisplayLocator(){
+    public WebElement getDescriptionDisplay(){
        return driver.findElement(descriptionDisplayLocator);
     }
-    public WebElement getStartOnLocator(){
-       return driver.findElement(startOnLocator);
+    public WebElement getStartDate(){
+       return driver.findElement(startDateLocator);
     }
-    public WebElement getDueOnLocator(){
-       return driver.findElement(dueOnLocator);
+    public WebElement getEndDate(){
+       return driver.findElement(endDateLocator);
     }
-    public WebElement getAddMilestoneButtonLocator(){
+    public WebElement getAddMilestoneButton(){
        return driver.findElement(addMilestoneButtonLocator);
+    }
+
+    public WebElement getMilestoneName(String milestoneName){
+        return driver.findElement(By.xpath(milestonesNameLocator.replace("Replace",milestoneName)));
     }
 
 

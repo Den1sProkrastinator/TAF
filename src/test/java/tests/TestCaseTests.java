@@ -7,10 +7,12 @@ public class TestCaseTests extends BaseTest {
 
     @Test
     public void successfulTestCaseValidationTest() {
-        // 1. Войти в приложение
-        // 2. Выбрать проект
-        // 3. Перейти на закладку Test Cases
-        // 4. Добавить валидный Test Case
+        //Написать CRUD тесты на Milesnotes
+        // 1.создание (англ. create)
+        // 2.чтение (read)
+        // 3.модификация (update)
+        // 4.удаление (delete)
+
 
 
     }

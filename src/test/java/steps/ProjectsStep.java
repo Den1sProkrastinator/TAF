@@ -16,9 +16,9 @@ public class ProjectsStep extends BaseStep {
 
     }
 
-    public MilestonesPage addMilestones(){
+    public void openMilestones(){
         projectsPage.getAddMilestones().click();
-        return milestonesPage;
+
     }
 
 

@@ -8,6 +8,7 @@ import services.BrowsersService;
 import steps.DashBoardStep;
 import steps.LoginStep;
 
+import steps.MilestonesStep;
 import steps.ProjectsStep;
 
 public class BaseTest {
@@ -19,6 +20,8 @@ public class BaseTest {
 
     protected DashBoardStep dashBoardStep;
 
+    protected MilestonesStep milestonesStep;
+
 
     @BeforeMethod
     public void setup() {
@@ -28,8 +31,9 @@ public class BaseTest {
 
         projectsStep = new ProjectsStep(driver);
         dashBoardStep = new DashBoardStep(driver);
-
+        milestonesStep = new MilestonesStep(driver);
         driver.get(ReadProperties.getUrl());
+
     }
 
     @AfterMethod
