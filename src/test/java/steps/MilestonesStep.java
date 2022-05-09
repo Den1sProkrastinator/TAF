@@ -4,6 +4,7 @@ import baseEntities.BaseStep;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import pages.MilestonesPage;
 
 public class MilestonesStep extends BaseStep {
@@ -16,18 +17,33 @@ public class MilestonesStep extends BaseStep {
         milestonesPage.getName().sendKeys(name);
         milestonesPage.getReference().sendKeys(reference);
         milestonesPage.getDescriptionDisplay().sendKeys(description);
-
-        //добавить дату через клик
         milestonesPage.getStartDate().sendKeys(startDate);
-
-
-        //добваить дату через клик
         milestonesPage.getEndDate().sendKeys(endDate);
-
         milestonesPage.getAddMilestoneButton().click();
-
         return milestonesPage;
     }
+
+       public void readMilestones (String milestoneName){
+        milestonesPage.getMilestoneName(milestoneName).click();
+
+       }
+
+       public void startMilestone () throws InterruptedException {
+        milestonesPage.getStartMilestone().click();
+      Thread.sleep(2000);
+        milestonesPage.getStartMilestoneButton().click();
+       }
+
+
+//       public void editMilestone(String parent){
+//        milestonesPage.getEditMilestoneButton().click();
+//
+//
+//       }
+
+
+
+
 
 
 

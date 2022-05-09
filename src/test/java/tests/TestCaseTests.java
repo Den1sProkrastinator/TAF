@@ -7,11 +7,12 @@ public class TestCaseTests extends BaseTest {
 
     @Test
     public void successfulTestCaseValidationTest() {
-        //Написать CRUD тесты на Milesnotes
-        // 1.создание (англ. create)
-        // 2.чтение (read)
-        // 3.модификация (update)
-        // 4.удаление (delete)
+        //Написать CRUD тесты на Milestones
+        // 1.создание Milestone +
+        // 2.чтение Milestone +/-(роверка не выполнена )
+        // 3.старт +/- работает без проверки
+        // 3.модификация Milestone
+        // 4.удаление Milestone
 
 
 

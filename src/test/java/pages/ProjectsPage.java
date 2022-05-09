@@ -11,7 +11,7 @@ public class ProjectsPage extends BasePage {
     private By headerTitleLabelName = By.xpath(
             "//div[contains(@class, 'content-header-title') and contains(text(), '')]");
     private  String  navigationName ="//div//li/a[text()='Replace']";
-    private By addMilestonesLocator = By.xpath("//div[@class='button-group']/a[@class='button button-left button-add']");
+    private By addMilestonesLocator = By.id("navigation-milestones-add");
 
     public ProjectsPage(WebDriver driver) {
         super(driver);

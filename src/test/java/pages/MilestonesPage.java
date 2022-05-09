@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class MilestonesPage extends BasePage {
-    private final static String pagePath="https://shootsmashchopstomp1.testrail.io/index.php?/milestones/add/1";
+    private final static String pagePath="";
 
     //локаторы
 
@@ -17,7 +17,6 @@ public class MilestonesPage extends BasePage {
     private By startDateLocator = By.id("start_on");
     private By endDateLocator = By.id("due_on");
 
-//    private By isCompletedLocator = By.id("is_completed");
     private By addMilestoneButtonLocator = By.id("accept");
 
     private By cancelButtonLocator = By.cssSelector(".button.button-left.button-negative.button-cancel.milestone-form-cancel");
@@ -26,6 +25,18 @@ public class MilestonesPage extends BasePage {
 
     private String milestonesNameLocator = "//div/a[.='Replace']";
 
+    private By milestoneIsOpeningLocator= By.cssSelector("content-header-title page_title display-inline-block");
+
+    private By startMilestoneLocator = By.id("navigation-milestones-start");
+
+    private By startMilestoneButtonLocator = By.id("startMilestoneSubmit");
+
+    private By successStartMilestoneButtonLocator = By.cssSelector("message message-success");
+
+
+
+
+
 
     public MilestonesPage(WebDriver driver) {
         super(driver);
@@ -33,9 +44,12 @@ public class MilestonesPage extends BasePage {
 
     @Override
     protected By getPageIdentifier() {
-        return successAddedLocator;
+         return successAddedLocator;
     }
 
+//    public By getLocatorIdentifier(){
+//
+//    }
 
     public void openPageByUrl() {
         super.openPageByUrl(pagePath);
@@ -59,10 +73,24 @@ public class MilestonesPage extends BasePage {
     public WebElement getAddMilestoneButton(){
        return driver.findElement(addMilestoneButtonLocator);
     }
+    public WebElement getStartMilestone(){
+       return driver.findElement(startMilestoneLocator);
+    }
+    public WebElement getStartMilestoneButton(){
+       return driver.findElement(startMilestoneButtonLocator);
+    }
+
+    public WebElement getMilestoneIsOpening(){
+       return driver.findElement(milestoneIsOpeningLocator);
+    }
 
     public WebElement getMilestoneName(String milestoneName){
         return driver.findElement(By.xpath(milestonesNameLocator.replace("Replace",milestoneName)));
     }
+    public WebElement getMilestoneIsOpening(String milestoneName){
+        return driver.findElement(By.xpath(milestonesNameLocator.replace("Replace",milestoneName)));
+    }
+
 
 
 }
