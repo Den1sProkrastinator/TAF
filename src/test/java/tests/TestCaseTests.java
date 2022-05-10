@@ -11,7 +11,7 @@ public class TestCaseTests extends BaseTest {
         // 1.создание Milestone +
         // 2.чтение Milestone +/-(роверка не выполнена )
         // 3.старт +/- работает без проверки
-        // 3.модификация Milestone
+        // 3.модификация Milestone +/-нет прооверки
         // 4.удаление Milestone
 
 

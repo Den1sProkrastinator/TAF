@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import org.openqa.selenium.support.ui.Select;
 import pages.MilestonesPage;
 
 public class MilestonesStep extends BaseStep {
@@ -23,26 +24,39 @@ public class MilestonesStep extends BaseStep {
         return milestonesPage;
     }
 
-       public void readMilestones (String milestoneName){
+    public void readMilestones(String milestoneName) {
         milestonesPage.getMilestoneName(milestoneName).click();
 
-       }
+    }
 
-       public void startMilestone () throws InterruptedException {
+    public void startMilestone() throws InterruptedException {
         milestonesPage.getStartMilestone().click();
-      Thread.sleep(2000);
+        Thread.sleep(2000);
         milestonesPage.getStartMilestoneButton().click();
-       }
+    }
 
 
-//       public void editMilestone(String parent){
-//        milestonesPage.getEditMilestoneButton().click();
-//
-//
-//       }
+    public void editMilestone(String editDescription) {
+        milestonesPage.getEditButton().click();
 
+        milestonesPage.getDescriptionDisplay().sendKeys(editDescription);
 
+        milestonesPage.getAddMilestoneButton().click();
 
+    }
+
+    public void deleteMilestone() throws InterruptedException {
+        milestonesPage.getEditButton().click();
+
+        milestonesPage.getAddMilestoneButton().click();
+
+        milestonesPage.getDeleteButton().click();
+        Thread.sleep(2000);
+        milestonesPage.getDeleteButton().click();
+        Thread.sleep(2000);
+   milestonesPage.getOkButton().click();
+
+    }
 
 
 
