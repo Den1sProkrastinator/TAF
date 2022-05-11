@@ -47,12 +47,12 @@ public class MilestonesTests extends BaseTest {
 
 
     }
-//    @Test
-//    public void deleteMilestone()  {
-//        loginAndOpenMilestoneMenu();
-//   milestonesStep.deleteMilestone("Denis");
-//
-//    }
+    @Test
+    public void deleteMilestone()  {
+        loginAndOpenMilestoneMenu();
+   milestonesStep.deleteMilestone("Denis");
+
+    }
 
     private void loginAndOpenMilestoneMenu() {
         loginStep.successLogin(
