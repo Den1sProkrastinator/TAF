@@ -4,12 +4,9 @@ import configuration.ReadProperties;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import pages.MilestoneReviewPage;
 import services.BrowsersService;
-import steps.DashBoardStep;
-import steps.LoginStep;
-
-import steps.MilestonesStep;
-import steps.ProjectsStep;
+import steps.*;
 
 public class BaseTest {
     protected WebDriver driver;
@@ -22,6 +19,10 @@ public class BaseTest {
 
     protected MilestonesStep milestonesStep;
 
+    protected CreateAndEditMilestoneStep createAndEditMilestoneStep;
+
+    protected MilestoneReviewStep milestoneReviewStep;
+
 
     @BeforeMethod
     public void setup() {
@@ -32,6 +33,9 @@ public class BaseTest {
         projectsStep = new ProjectsStep(driver);
         dashBoardStep = new DashBoardStep(driver);
         milestonesStep = new MilestonesStep(driver);
+        createAndEditMilestoneStep = new CreateAndEditMilestoneStep(driver);
+        milestoneReviewStep = new MilestoneReviewStep(driver);
+
         driver.get(ReadProperties.getUrl());
 
     }

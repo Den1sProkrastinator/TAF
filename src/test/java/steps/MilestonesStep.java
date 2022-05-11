@@ -1,12 +1,8 @@
 package steps;
 
 import baseEntities.BaseStep;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
-import org.openqa.selenium.support.ui.Select;
-import pages.MilestonesPage;
+import pages.MilestoneReviewPage;
 
 public class MilestonesStep extends BaseStep {
 
@@ -14,44 +10,22 @@ public class MilestonesStep extends BaseStep {
         super(driver);
     }
 
-    public MilestonesPage createMilestones(String name, String reference, String description, String startDate, String endDate) {
-        milestonesPage.getName().sendKeys(name);
-        milestonesPage.getReference().sendKeys(reference);
-        milestonesPage.getDescriptionDisplay().sendKeys(description);
-        milestonesPage.getStartDate().sendKeys(startDate);
-        milestonesPage.getEndDate().sendKeys(endDate);
-        milestonesPage.getAddMilestoneButton().click();
-        return milestonesPage;
-    }
-
-    public void addMilestones(){
+    public void addMilestones() {
         milestonesPage.getAddMilestones().click();
 
     }
-    public void readMilestones(String milestoneName) {
+
+    public MilestoneReviewPage readMilestones(String milestoneName) {
         milestonesPage.getMilestoneName(milestoneName).click();
+        return milestoneReviewPage;
 
     }
 
-    public void startMilestone() throws InterruptedException {
-        milestonesPage.getStartMilestone().click();
-        Thread.sleep(2000);
-        milestonesPage.getStartMilestoneButton().click();
-    }
-
-
-    public void editMilestone(String editDescription) {
-        milestonesPage.getEditButton().click();
-        milestonesPage.getDescriptionDisplay().sendKeys(editDescription);
-        milestonesPage.getAddMilestoneButton().click();
-
-    }
 
     public void deleteMilestone(String milestoneName) {
 
         milestonesPage.getDeleteButton(milestoneName).click();
         milestonesPage.getOkButton().click();
-
     }
 
 
