@@ -24,6 +24,10 @@ public class MilestonesStep extends BaseStep {
         return milestonesPage;
     }
 
+    public void addMilestones(){
+        milestonesPage.getAddMilestones().click();
+
+    }
     public void readMilestones(String milestoneName) {
         milestonesPage.getMilestoneName(milestoneName).click();
 
@@ -38,27 +42,17 @@ public class MilestonesStep extends BaseStep {
 
     public void editMilestone(String editDescription) {
         milestonesPage.getEditButton().click();
-
         milestonesPage.getDescriptionDisplay().sendKeys(editDescription);
-
         milestonesPage.getAddMilestoneButton().click();
 
     }
 
-    public void deleteMilestone() throws InterruptedException {
-        milestonesPage.getEditButton().click();
+    public void deleteMilestone(String milestoneName) {
 
-        milestonesPage.getAddMilestoneButton().click();
-
-        milestonesPage.getDeleteButton().click();
-        Thread.sleep(2000);
-        milestonesPage.getDeleteButton().click();
-        Thread.sleep(2000);
-   milestonesPage.getOkButton().click();
+        milestonesPage.getDeleteButton(milestoneName).click();
+        milestonesPage.getOkButton().click();
 
     }
-
-
 
 
 }

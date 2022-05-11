@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 public class MilestonesPage extends BasePage {
     private final static String pagePath = "";
 
-    //локаторы
+    //локаторы страницы  создания milestone и редактирования
 
     private By nameLocator = By.id("name");
     private By referenceLocator = By.id("reference");
@@ -18,10 +18,19 @@ public class MilestonesPage extends BasePage {
     private By endDateLocator = By.id("due_on");
     private By addMilestoneButtonLocator = By.id("accept");
 
+    // локаторы навигации во вкладке milestone
+    private String milestonesNameLocator = "//div/a[.='Replace']";
+
+    private By editButtonLocator = By.xpath("//div/a[text()='Edit']");
+
+    private String deleteButtonLocator=
+            "//div/div/a[@href and text()='Replace']/following::a[@class='deleteLink'][1]";
+    private By okButtonLocator=By.xpath("//*[@id=\"deleteDialog\"]/div[3]/a[1]");
 
     private By successAddedLocator = By.xpath("//div[text()='Successfully added the new milestone.']");
 
-    private String milestonesNameLocator = "//div/a[.='Replace']";
+    private By addMilestonesLocator = By.id("navigation-milestones-add");
+
 
 
     private By startMilestoneLocator = By.id("navigation-milestones-start");
@@ -30,15 +39,16 @@ public class MilestonesPage extends BasePage {
 
     private By successStartMilestoneButtonLocator = By.cssSelector("message message-success");
 
-    private By editButtonLocator = By.xpath("//div/a[text()='Edit']");
+
 
     private By milestoneIsOpeningLocator = By.cssSelector(".content-header-title.page_title.display-inline-block");
 
 
-    private By deleteButtonLocator = By.xpath("//div/span[@class='button button-negative button-delete']/a");
+
     private By acceptDeleteLocator = By.xpath("//*[@id=\"deleteDialog\"]/div[2]/div/div/label/input");
 
-    private By okButtonLocator=By.xpath("//*[@id=\"deleteDialog\"]/div[3]/a[1]");
+
+
 
 
     public MilestonesPage(WebDriver driver) {
@@ -95,9 +105,7 @@ public class MilestonesPage extends BasePage {
         return driver.findElement(editButtonLocator);
     }
 
-    public WebElement getDeleteButton() {
-        return driver.findElement(deleteButtonLocator);
-    }
+
     public WebElement getAcceptDelete(){
         return driver.findElement(acceptDeleteLocator);
     }
@@ -115,5 +123,12 @@ public class MilestonesPage extends BasePage {
         return driver.findElement(By.xpath(milestonesNameLocator.replace("Replace", milestoneName)));
     }
 
+    public WebElement getDeleteButton(String milestoneName) {
+        return driver.findElement(By.xpath(deleteButtonLocator.replace("Replace",milestoneName)));
+    }
+
+    public WebElement getAddMilestones(){
+        return  driver.findElement(addMilestonesLocator);
+    }
 
 }

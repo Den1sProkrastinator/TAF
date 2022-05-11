@@ -21,7 +21,7 @@ public class MilestonesTests extends BaseTest {
     @Test
     public void addMilestones() throws InterruptedException {
         loginAndOpenMilestone();
-        projectsStep.addMilestones();
+        milestonesStep.addMilestones();
         Assert.assertTrue(milestonesStep.createMilestones
                 ("Denis", "sss", "dasdsa", "5/10/2022", "5/15/2022").isPageOpened());
     }
@@ -30,6 +30,7 @@ public class MilestonesTests extends BaseTest {
     public void readMilestone() {
         loginAndOpenMilestone();
         milestonesStep.readMilestones("Denis");
+
     }
 
     @Test //добавить ожидание !
@@ -50,14 +51,11 @@ public class MilestonesTests extends BaseTest {
 
     }
     @Test
-    public void deleteMilestone() throws InterruptedException {
+    public void deleteMilestone()  {
         loginAndOpenMilestone();
-        milestonesStep.readMilestones("Denis");
-        milestonesStep.deleteMilestone();
-
-
-
+        milestonesStep.deleteMilestone("Denis");
     }
+
 
 
 
