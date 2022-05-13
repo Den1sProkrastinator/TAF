@@ -18,11 +18,7 @@ public class MilestoneReviewPage extends BasePage {
 
     private By startMilestoneButtonLocator = By.id("startMilestoneSubmit");
 
-    private By successStartLocator = By.xpath(
-            "//div[@class='message message-success' and text()='Successfully started the milestone.']");
 
-    private By successUpdateLocator = By.xpath(
-            "//div[@class='message message-success' and text()='Successfully updated the milestone.']");
     private By editButtonLocator = By.xpath("//div/a[text()='Edit']");
 
 
@@ -41,14 +37,40 @@ public class MilestoneReviewPage extends BasePage {
         return driver.findElement(startMilestoneButtonLocator);
     }
 
-    public WebElement getSuccessStart() {
-        return driver.findElement(successStartLocator);
-    }
-
-    public WebElement getSuccessUpdate() {
-        return driver.findElement(successUpdateLocator);
-    }
     public WebElement getEditButton() {
         return driver.findElement(editButtonLocator);
+    }
+
+
+    //классы проверок
+
+    public static class CheckStartMilestone extends BasePage {
+        public CheckStartMilestone(WebDriver driver) {
+            super(driver);
+        }
+
+        private By successStartLocator = By.xpath(
+                "//div[@class='message message-success' and text()='Successfully started the milestone.']");
+
+        @Override
+        protected By getPageIdentifier() {
+            return successStartLocator;
+        }
+    }
+
+
+    public static class CheckSuccessUpdate extends BasePage {
+
+        private By successUpdateLocator = By.xpath(
+                "//div[@class='message message-success' and text()='Successfully updated the milestone.']");
+
+        public CheckSuccessUpdate(WebDriver driver) {
+            super(driver);
+        }
+
+        @Override
+        protected By getPageIdentifier() {
+            return successUpdateLocator;
+        }
     }
 }

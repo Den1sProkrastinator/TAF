@@ -3,6 +3,7 @@ package steps;
 import baseEntities.BaseStep;
 import org.openqa.selenium.WebDriver;
 import pages.MilestoneReviewPage;
+import pages.MilestonesPage;
 
 public class MilestonesStep extends BaseStep {
 
@@ -22,10 +23,12 @@ public class MilestonesStep extends BaseStep {
     }
 
 
-    public void deleteMilestone(String milestoneName) {
+    public MilestonesPage.CheckDeleteMilestone deleteMilestone(String milestoneName) throws InterruptedException {
 
         milestonesPage.getDeleteButton(milestoneName).click();
         milestonesPage.getOkButton().click();
+        Thread.sleep(2000);
+        return checkDeleteMilestone;
     }
 
 

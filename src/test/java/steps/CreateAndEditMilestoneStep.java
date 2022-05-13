@@ -3,6 +3,8 @@ package steps;
 import baseEntities.BaseStep;
 import org.openqa.selenium.WebDriver;
 import pages.CreateAndEditMilestonePage;
+import pages.MilestoneReviewPage.CheckSuccessUpdate;
+import pages.MilestoneReviewPage;
 
 public class CreateAndEditMilestoneStep extends BaseStep {
     public CreateAndEditMilestoneStep(WebDriver driver) {
@@ -18,10 +20,12 @@ public class CreateAndEditMilestoneStep extends BaseStep {
         return createAndEditMilestonePage;
     }
 
-    public void editMilestone(String editDescription) {
+    public MilestoneReviewPage.CheckSuccessUpdate editMilestone(String editDescription) throws InterruptedException {
         milestoneReviewPage.getEditButton().click();
         createAndEditMilestonePage.getDescriptionDisplay().sendKeys(editDescription);
         createAndEditMilestonePage.getAddMilestoneButton().click();
+        Thread.sleep(3000);
+        return checkSuccessUpdate;
     }
 
 

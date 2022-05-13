@@ -6,12 +6,13 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static org.testng.TestRunner.PriorityWeight.dependsOnMethods;
+
 public class MilestonesTests extends BaseTest {
 
 
-
-    @Test
-    public void addMilestones()  {
+    @Test(priority = 1)
+    public void addMilestones() {
         loginAndOpenMilestoneMenu();
         milestonesStep.addMilestones();
         Assert.assertTrue(createAndEditMilestoneStep.createMilestones
@@ -19,39 +20,37 @@ public class MilestonesTests extends BaseTest {
     }
 
 
-    @Test
+    @Test(priority = 2)
     public void readMilestone() throws InterruptedException {
         loginAndOpenMilestoneMenu();
         Thread.sleep(2000);
-     Assert.assertTrue( milestonesStep.readMilestones("Denis").isPageOpened());
+        Assert.assertTrue(milestonesStep.readMilestones("Denis").isPageOpened());
 
     }
 
-    @Test
+    @Test(priority = 3)
     public void startMilestone() throws InterruptedException {
         loginAndOpenMilestoneMenu();
         milestonesStep.readMilestones("Denis");
-        milestoneReviewStep.startMilestone();
 
+     Assert.assertTrue(milestoneReviewStep.startMilestone().isPageOpened());
     }
 
 
-    @Test
+    @Test(priority = 4)
     public void editMilestone() throws InterruptedException {
         loginAndOpenMilestoneMenu();
-        Thread.sleep(2000);
+        Thread.sleep(200);
         milestonesStep.readMilestones("Denis");
-        Thread.sleep(2000);
-
-        createAndEditMilestoneStep.editMilestone("Admin");
-
-
+        Thread.sleep(200);
+        Assert.assertTrue(createAndEditMilestoneStep.editMilestone("Admin").isPageOpened());
     }
-    @Test
-    public void deleteMilestone()  {
-        loginAndOpenMilestoneMenu();
-   milestonesStep.deleteMilestone("Denis");
 
+    @Test(priority = 5)
+    public void deleteMilestone() throws InterruptedException {
+        loginAndOpenMilestoneMenu();
+
+       Assert.assertTrue(milestonesStep.deleteMilestone("Denis").isPageOpened());
     }
 
     private void loginAndOpenMilestoneMenu() {
@@ -60,10 +59,8 @@ public class MilestonesTests extends BaseTest {
                 ReadProperties.password());
         dashBoardStep.projectSelection("Denis_QA18_PO_HW");
         projectsStep.menuNavigation("Milestones");
+
     }
-
-
-
 
 
 }

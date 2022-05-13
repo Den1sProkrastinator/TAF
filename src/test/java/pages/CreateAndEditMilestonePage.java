@@ -51,4 +51,6 @@ public class CreateAndEditMilestonePage extends BasePage {
     public WebElement getAddMilestoneButton() {
         return driver.findElement(addMilestoneButtonLocator);
     }
+
+
 }
