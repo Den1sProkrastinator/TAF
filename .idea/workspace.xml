@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dca24dd9-110f-4aa2-8f3f-731722e53a10" name="Changes" comment="HW_8" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="PageObject_Simple_HW_With_WebDriverWait" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="Den1sProkrastinator" />
+        <option name="repository" value="TAF" />
+      </RepoCoordinatesHolder>
+    </option>
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="ba72dbb1-16de-4816-8d41-249aacce2f3b" />
+        <option name="url" value="git@github.com:Den1sProkrastinator/TAF.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="28LJUKwi9hnDHpAovCe9jFRcUjN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/TeachMeSkilsCourse/TAF/src/test/java/tests&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\TeachMeSkilsCourse\TAF\src\test\java\tests" />
+      <recent name="C:\TeachMeSkilsCourse\TAF\src" />
+      <recent name="C:\TeachMeSkilsCourse\TAF\src\test\java\pages" />
+      <recent name="C:\TeachMeSkilsCourse\TAF\src\test\java\steps" />
+      <recent name="C:\TeachMeSkilsCourse\TAF\src\test\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\TeachMeSkilsCourse\TAF\src\test\java\steps" />
+      <recent name="C:\TeachMeSkilsCourse\TAF\src\test\java\pages" />
+      <recent name="C:\TeachMeSkilsCourse\TAF\src\test\java\tests" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="steps" />
+      <recent name="pages" />
+      <recent name="baseEntities" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.MilestonesTests">
+    <configuration name="MilestonesTests" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TMS_Lessons" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.MilestonesTests" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MilestonesTests.addMilestones" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TMS_Lessons" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.MilestonesTests" />
+      <option name="METHOD_NAME" value="addMilestones" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MilestonesTests.deleteMilestone" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TMS_Lessons" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.MilestonesTests" />
+      <option name="METHOD_NAME" value="deleteMilestone" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MilestonesTests.editMilestone" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TMS_Lessons" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.MilestonesTests" />
+      <option name="METHOD_NAME" value="editMilestone" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MilestonesTests.startMilestone" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="TMS_Lessons" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.MilestonesTests" />
+      <option name="METHOD_NAME" value="startMilestone" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.MilestonesTests" />
+        <item itemvalue="TestNG.MilestonesTests.editMilestone" />
+        <item itemvalue="TestNG.MilestonesTests.addMilestones" />
+        <item itemvalue="TestNG.MilestonesTests.deleteMilestone" />
+        <item itemvalue="TestNG.MilestonesTests.startMilestone" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Xpath">
+      <created>1650908850325</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1650908850325</updated>
+    </task>
+    <task id="LOCAL-00002" summary="first commit">
+      <created>1650909084489</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1650909084489</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dca24dd9-110f-4aa2-8f3f-731722e53a10" name="Changes" comment="first commit" />
+      <created>1650989954902</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650989954902</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Xpath">
+      <created>1650990550043</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1650990550043</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Xpath">
+      <created>1651003422891</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1651003422891</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Snova">
+      <created>1651070005053</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1651070005053</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Snova">
+      <created>1651075692767</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1651075692767</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Leason 8">
+      <created>1651081996678</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1651081996678</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Leason 8">
+      <created>1651084868887</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1651084868887</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Leason 8">
+      <created>1651085260555</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1651085260555</updated>
+    </task>
+    <task id="LOCAL-00010" summary="HW_8">
+      <created>1651575945076</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1651575945076</updated>
+    </task>
+    <task id="LOCAL-00011" summary="HW_8">
+      <created>1651576020230</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1651576020230</updated>
+    </task>
+    <task id="LOCAL-00012" summary="HW_8">
+      <created>1651586943811</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1651586943811</updated>
+    </task>
+    <task id="LOCAL-00013" summary="HW_8">
+      <created>1651593416748</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1651593416748</updated>
+    </task>
+    <task id="LOCAL-00014" summary="HW_8">
+      <created>1651594060384</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1651594060384</updated>
+    </task>
+    <task id="LOCAL-00015" summary="HW_8">
+      <created>1651594258685</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1651594258685</updated>
+    </task>
+    <task id="LOCAL-00016" summary="HW_8">
+      <created>1651663420666</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1651663420666</updated>
+    </task>
+    <task id="LOCAL-00017" summary="HW_8">
+      <created>1651666681834</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1651666681834</updated>
+    </task>
+    <task id="LOCAL-00018" summary="HW_7">
+      <created>1651668196636</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1651668196636</updated>
+    </task>
+    <task id="LOCAL-00019" summary="HW_7">
+      <created>1651668432964</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1651668432964</updated>
+    </task>
+    <task id="LOCAL-00020" summary="HW_8 с чистого листа">
+      <created>1651673026458</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1651673026458</updated>
+    </task>
+    <task id="LOCAL-00021" summary="HW_8 с чистого листа">
+      <created>1651675914728</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1651675914728</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Leason 9">
+      <created>1651762256814</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1651762256814</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Leason 9">
+      <created>1651780726385</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1651780726385</updated>
+    </task>
+    <task id="LOCAL-00024" summary="HW_8">
+      <created>1651865240439</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1651865240439</updated>
+    </task>
+    <task id="LOCAL-00025" summary="HW_8">
+      <created>1651867153609</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1651867153609</updated>
+    </task>
+    <task id="LOCAL-00026" summary="HW_8">
+      <created>1652048136523</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1652048136523</updated>
+    </task>
+    <task id="LOCAL-00027" summary="HW_8">
+      <created>1652057314600</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1652057314600</updated>
+    </task>
+    <task id="LOCAL-00028" summary="HW_8">
+      <created>1652184623276</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1652184623276</updated>
+    </task>
+    <task id="LOCAL-00029" summary="HW_8">
+      <created>1652286259193</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1652286259193</updated>
+    </task>
+    <task id="LOCAL-00030" summary="HW_8">
+      <created>1652292077389</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1652292077389</updated>
+    </task>
+    <task id="LOCAL-00031" summary="HW_8">
+      <created>1652292130919</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1652292130919</updated>
+    </task>
+    <task id="LOCAL-00032" summary="HW_8">
+      <created>1652383983423</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1652383983423</updated>
+    </task>
+    <task id="LOCAL-00033" summary="HW_8">
+      <created>1652471151538</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1652471151538</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <MESSAGE value="Xpath" />
+    <MESSAGE value="Snova" />
+    <MESSAGE value="Leason 8" />
+    <MESSAGE value="HW_7" />
+    <MESSAGE value="HW_8 с чистого листа" />
+    <MESSAGE value="Leason 9" />
+    <MESSAGE value="HW_8" />
+    <option name="LAST_COMMIT_MESSAGE" value="HW_8" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="12" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
