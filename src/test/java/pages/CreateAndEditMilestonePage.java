@@ -29,27 +29,27 @@ public class CreateAndEditMilestonePage extends BasePage {
 
     //атомарные методы
     public WebElement getName() {
-        return driver.findElement(nameLocator);
+        return waitService.waitForExist(nameLocator);
     }
 
     public WebElement getReference() {
-        return driver.findElement(referenceLocator);
+        return waitService.waitForExist(referenceLocator);
     }
 
     public WebElement getDescriptionDisplay() {
-        return driver.findElement(descriptionDisplayLocator);
+        return waitService.waitForExist(descriptionDisplayLocator);
     }
 
     public WebElement getStartDate() {
-        return driver.findElement(startDateLocator);
+        return waitService.waitForExist(startDateLocator);
     }
 
     public WebElement getEndDate() {
-        return driver.findElement(endDateLocator);
+        return waitService.waitForExist(endDateLocator);
     }
 
     public WebElement getAddMilestoneButton() {
-        return driver.findElement(addMilestoneButtonLocator);
+        return waitService.waitForExist(addMilestoneButtonLocator);
     }
 
 

@@ -29,15 +29,15 @@ public class ProjectsPage extends BasePage {
 
 
     public WebElement getProjectByNameLocator(){
-        return   driver.findElement(headerTitleLabelName);
+        return   waitService.waitForExist(headerTitleLabelName);
     }
 
 
     public WebElement getMenuByName(String menuName){
-        return driver.findElement(By.xpath(navigationName.replace("Replace",menuName)));
+        return waitService.waitForExist(By.xpath(navigationName.replace("Replace",menuName)));
     }
     public WebElement getAddMilestones(){
-        return  driver.findElement(addMilestonesLocator);
+        return  waitService.waitForExist(addMilestonesLocator);
     }
 
 

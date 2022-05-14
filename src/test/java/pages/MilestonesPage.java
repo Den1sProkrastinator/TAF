@@ -38,20 +38,20 @@ public class MilestonesPage extends BasePage {
 
 
     public WebElement getOkButton() {
-        return driver.findElement(okButtonLocator);
+        return waitService.waitForExist(okButtonLocator);
     }
 
     public WebElement getMilestoneName(String milestoneName) {
-        return driver.findElement(By.xpath(milestonesNameLocator.replace("Replace", milestoneName)));
+        return waitService.waitForExist(By.xpath(milestonesNameLocator.replace("Replace", milestoneName)));
     }
 
 
     public WebElement getDeleteButton(String milestoneName) {
-        return driver.findElement(By.xpath(deleteButtonLocator.replace("Replace", milestoneName)));
+        return waitService.waitForExist(By.xpath(deleteButtonLocator.replace("Replace", milestoneName)));
     }
 
     public WebElement getAddMilestones() {
-        return driver.findElement(addMilestonesLocator);
+        return waitService.waitForExist(addMilestonesLocator);
     }
 
 

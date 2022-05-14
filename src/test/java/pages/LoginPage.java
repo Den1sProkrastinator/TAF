@@ -24,14 +24,14 @@ public class LoginPage extends BasePage {
 
     // Блок атомарных методов
     public WebElement getEmailInput() {
-        return driver.findElement(emailInputLocator);
+        return waitService.waitForExist(emailInputLocator);
     }
     public WebElement getPswInput() {
-        return driver.findElement(pswInputLocator);
+        return waitService.waitForExist(pswInputLocator);
     }
     public WebElement getLogInButton() {
-        return driver.findElement(logInButtonLocator);
+        return waitService.waitForExist(logInButtonLocator);
     }
-    public WebElement getErrorTextElement() { return driver.findElement(errorTextLocator);
+    public WebElement getErrorTextElement() { return waitService.waitForExist(errorTextLocator);
     }
 }

@@ -21,15 +21,15 @@ public class MilestonesTests extends BaseTest {
 
 
     @Test(priority = 2)
-    public void readMilestone() throws InterruptedException {
+    public void readMilestone()  {
         loginAndOpenMilestoneMenu();
-        Thread.sleep(2000);
+
         Assert.assertTrue(milestonesStep.readMilestones("Denis").isPageOpened());
 
     }
 
     @Test(priority = 3)
-    public void startMilestone() throws InterruptedException {
+    public void startMilestone() {
         loginAndOpenMilestoneMenu();
         milestonesStep.readMilestones("Denis");
 
@@ -38,16 +38,16 @@ public class MilestonesTests extends BaseTest {
 
 
     @Test(priority = 4)
-    public void editMilestone() throws InterruptedException {
+    public void editMilestone()  {
         loginAndOpenMilestoneMenu();
-        Thread.sleep(200);
+
         milestonesStep.readMilestones("Denis");
-        Thread.sleep(200);
+
         Assert.assertTrue(createAndEditMilestoneStep.editMilestone("Admin").isPageOpened());
     }
 
     @Test(priority = 5)
-    public void deleteMilestone() throws InterruptedException {
+    public void deleteMilestone()  {
         loginAndOpenMilestoneMenu();
 
        Assert.assertTrue(milestonesStep.deleteMilestone("Denis").isPageOpened());
