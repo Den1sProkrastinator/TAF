@@ -33,7 +33,12 @@ public class WaitsService {
       return   wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
+    public WebElement waitForToBeClickable(WebElement element){
+        return  wait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
     public boolean waitForElementInvisible(WebElement element){
+
       return    wait.until(ExpectedConditions.invisibilityOf(element));
 
     }

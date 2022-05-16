@@ -9,6 +9,7 @@ import java.time.Duration;
 
 public abstract class BasePage {
     protected WebDriver driver;
+
     protected WaitsService waitsService;
 
     public BasePage(WebDriver driver) {
