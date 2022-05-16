@@ -5,8 +5,13 @@ import models.Project;
 import org.checkerframework.checker.signature.qual.DotSeparatedIdentifiersOrPrimitiveType;
 import org.testng.annotations.Test;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class SerializationTest {
 
@@ -24,21 +29,28 @@ public class SerializationTest {
         gson.toJson(project, file);
         file.close();
     }
-    @Test
-    public void jsonToObjectTest(){
-        Gson gson=new Gson();
 
-        String json= "{\n" +
+    @Test
+    public void jsonToObjectTest() throws IOException {
+        Gson gson = new Gson();
+
+        String json = "{\n" +
                 "  \"name\": \"Test Project\",\n" +
                 "  \"announcement\": \"big test data\",\n" +
                 "  \"show_announcement\": false,\n" +
                 "  \"type\": 2\n" +
                 "}";
 
-        Project projectFromString = gson.fromJson(json,Project.class);
 
+        Project projectFromString = gson.fromJson(json, Project.class);
         System.out.println(projectFromString.toString());
         System.out.println(projectFromString.getName());
+
+        Reader reader = Files.newBufferedReader(Paths.get("projectResult.json"));
+        Project projectFromFile = gson.fromJson(reader,Project.class);
+
+        System.out.println(projectFromFile.toString());
+        System.out.println(projectFromFile.getName());
 
     }
 }

@@ -1,6 +1,6 @@
-{
-  "name": "Test Project",
-  "announcement": "big test data",
-  "show_announcement": false,
-  "type": 2
-}
+ {
+    "name": "Test Project",
+    "announcement": "big test data",
+    "show_announcement": false,
+    "type": 2
+  }
