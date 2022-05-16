@@ -117,8 +117,8 @@ public class ActionsTest extends BaseTest {
         WebElement fileUploadPath = wait.waitForExists(By.id("file-upload"));
         String pathToFile = ActionsTest.class.getClassLoader().getResource("download.jpg").getPath();
 
-        System.out.println(pathToFile);
-        fileUploadPath.sendKeys(pathToFile);
+
+        fileUploadPath.sendKeys("C:\\TeachMeSkilsCourse\\TAF\\src\\test\\resources\\download.jpg");
         wait.waitForExists(By.id("file-submit")).submit();
         Thread.sleep(2000);
 
