@@ -30,15 +30,15 @@ public class MilestoneReviewPage extends BasePage {
     //атомарные методы
 
     public WebElement getStartMilestone() {
-        return waitService.waitForExist(startMilestoneLocator);
+        return waitService.waitForExists(startMilestoneLocator);
     }
 
     public WebElement getStartMilestoneButton() {
-        return waitService.waitForExist(startMilestoneButtonLocator);
+        return waitService.waitForExists(startMilestoneButtonLocator);
     }
 
     public WebElement getEditButton() {
-        return waitService.waitForExist(editButtonLocator);
+        return waitService.waitForExists(editButtonLocator);
     }
 
 

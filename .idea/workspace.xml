@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dca24dd9-110f-4aa2-8f3f-731722e53a10" name="Changes" comment="HW_8">
+    <list default="true" id="dca24dd9-110f-4aa2-8f3f-731722e53a10" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/WaitService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/baseEntities/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/baseEntities/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/CreateAndEditMilestonePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CreateAndEditMilestonePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/DashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/DashboardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/MilestoneReviewPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MilestoneReviewPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/MilestonesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MilestonesPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/ProjectsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/ProjectsPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,15 +75,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/TeachMeSkilsCourse/TAF/src/test/java/tests"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/TeachMeSkilsCourse/TAF/src/test/java/tests&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\TeachMeSkilsCourse\TAF\src\test\java\tests" />
@@ -95,7 +103,7 @@
       <recent name="baseEntities" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.MilestonesTests.readMilestone">
+  <component name="RunManager" selected="TestNG.MilestonesTests">
     <configuration name="MilestonesTests" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="TMS_Lessons" />
       <extension name="coverage">
@@ -187,9 +195,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.MilestonesTests.readMilestone" />
-        <item itemvalue="TestNG.MilestonesTests.addMilestones" />
         <item itemvalue="TestNG.MilestonesTests" />
+        <item itemvalue="TestNG.MilestonesTests.addMilestones" />
+        <item itemvalue="TestNG.MilestonesTests.readMilestone" />
         <item itemvalue="TestNG.MilestonesTests.startMilestone" />
         <item itemvalue="TestNG.MilestonesTests.editMilestone" />
       </list>
@@ -474,6 +482,15 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="12" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/baseEntities/BaseTest.java</url>
+          <line>27</line>
+          <properties class="baseEntities.BaseTest" method="setup">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

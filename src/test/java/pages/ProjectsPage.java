@@ -29,15 +29,15 @@ public class ProjectsPage extends BasePage {
 
 
     public WebElement getProjectByNameLocator(){
-        return   waitService.waitForExist(headerTitleLabelName);
+        return   waitService.waitForExists(headerTitleLabelName);
     }
 
 
     public WebElement getMenuByName(String menuName){
-        return waitService.waitForExist(By.xpath(navigationName.replace("Replace",menuName)));
+        return waitService.waitForExists(By.xpath(navigationName.replace("Replace",menuName)));
     }
     public WebElement getAddMilestones(){
-        return  waitService.waitForExist(addMilestonesLocator);
+        return  waitService.waitForExists(addMilestonesLocator);
     }
 
 

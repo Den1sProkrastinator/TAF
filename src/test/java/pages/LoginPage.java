@@ -24,14 +24,14 @@ public class LoginPage extends BasePage {
 
     // Блок атомарных методов
     public WebElement getEmailInput() {
-        return waitService.waitForExist(emailInputLocator);
+        return waitService.waitForExists(emailInputLocator);
     }
     public WebElement getPswInput() {
-        return waitService.waitForExist(pswInputLocator);
+        return waitService.waitForExists(pswInputLocator);
     }
     public WebElement getLogInButton() {
-        return waitService.waitForExist(logInButtonLocator);
+        return waitService.waitForExists(logInButtonLocator);
     }
-    public WebElement getErrorTextElement() { return waitService.waitForExist(errorTextLocator);
+    public WebElement getErrorTextElement() { return waitService.waitForExists(errorTextLocator);
     }
 }

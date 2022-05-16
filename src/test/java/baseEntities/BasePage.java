@@ -20,7 +20,7 @@ public abstract class BasePage {
 
 
     public boolean isPageOpened() {
-        return waitService.waitForExist(getPageIdentifier()).isDisplayed();
+        return waitService.waitForExists(getPageIdentifier()).isDisplayed();
     }
 
     public void openPageByUrl(String pagePath) {

@@ -52,8 +52,8 @@ public class BrowsersService {
 //        Duration duration= Duration.ofSeconds(20);
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
-        driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(60));
+        //driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
+        //driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(60));
 
         return driver;
     }

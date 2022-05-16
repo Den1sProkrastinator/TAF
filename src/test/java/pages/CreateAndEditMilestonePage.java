@@ -29,27 +29,27 @@ public class CreateAndEditMilestonePage extends BasePage {
 
     //атомарные методы
     public WebElement getName() {
-        return waitService.waitForExist(nameLocator);
+        return waitService.waitForExists(nameLocator);
     }
 
     public WebElement getReference() {
-        return waitService.waitForExist(referenceLocator);
+        return waitService.waitForExists(referenceLocator);
     }
 
     public WebElement getDescriptionDisplay() {
-        return waitService.waitForExist(descriptionDisplayLocator);
+        return waitService.waitForExists(descriptionDisplayLocator);
     }
 
     public WebElement getStartDate() {
-        return waitService.waitForExist(startDateLocator);
+        return waitService.waitForExists(startDateLocator);
     }
 
     public WebElement getEndDate() {
-        return waitService.waitForExist(endDateLocator);
+        return waitService.waitForExists(endDateLocator);
     }
 
     public WebElement getAddMilestoneButton() {
-        return waitService.waitForExist(addMilestoneButtonLocator);
+        return waitService.waitForExists(addMilestoneButtonLocator);
     }
 
 

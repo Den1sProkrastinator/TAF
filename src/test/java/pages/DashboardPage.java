@@ -30,7 +30,7 @@ public class DashboardPage extends BasePage {
 
 
     public WebElement getProjectByName(String projectName){
-        return waitService.waitForExist(By.xpath(projectNameLocator.replace("Replace",projectName)));
+        return waitService.waitForExists(By.xpath(projectNameLocator.replace("Replace",projectName)));
     }
 
 
