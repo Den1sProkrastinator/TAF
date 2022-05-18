@@ -12,7 +12,7 @@ public class MilestoneReviewPage extends BasePage {
 
 
     //локаторы
-    private By milestoneIsOpening = By.cssSelector(".content-header-title.page_title.display-inline-block");
+    private By milestoneIsOpening = By.cssSelector(".content-header-title.page_title");
 
     private By startMilestoneLocator = By.id("navigation-milestones-start");
 
