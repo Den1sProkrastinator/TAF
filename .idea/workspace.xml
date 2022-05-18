@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dca24dd9-110f-4aa2-8f3f-731722e53a10" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/services/WaitService.java" afterDir="false" />
+    <list default="true" id="dca24dd9-110f-4aa2-8f3f-731722e53a10" name="Changes" comment="commit 2">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/baseEntities/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/baseEntities/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/CreateAndEditMilestonePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CreateAndEditMilestonePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/DashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/DashboardPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/MilestoneReviewPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MilestoneReviewPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/MilestonesPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MilestonesPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/ProjectsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/ProjectsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,8 +190,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.MilestonesTests" />
-        <item itemvalue="TestNG.MilestonesTests.addMilestones" />
         <item itemvalue="TestNG.MilestonesTests.readMilestone" />
+        <item itemvalue="TestNG.MilestonesTests.addMilestones" />
         <item itemvalue="TestNG.MilestonesTests.startMilestone" />
         <item itemvalue="TestNG.MilestonesTests.editMilestone" />
       </list>
@@ -482,14 +476,15 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="12" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/baseEntities/BaseTest.java</url>
-          <line>27</line>
-          <properties class="baseEntities.BaseTest" method="setup">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="13" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/baseEntities/BaseStep.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/baseEntities/BasePage.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
