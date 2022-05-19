@@ -34,7 +34,7 @@ public class MilestoneReviewPage extends BasePage {
     }
 
     public WebElement getStartMilestoneButton() {
-        return waitService.waitForExists(startMilestoneButtonLocator);
+        return waitService.waitForVisibilityLocatedBy(startMilestoneButtonLocator);
     }
 
     public WebElement getEditButton() {
