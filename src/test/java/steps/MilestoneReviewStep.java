@@ -10,9 +10,10 @@ public class MilestoneReviewStep extends BaseStep {
         super(driver);
     }
 
-    public MilestoneReviewPage.CheckStartMilestone startMilestone()  {
+    public MilestoneReviewPage.CheckStartMilestone startMilestone() throws InterruptedException {
+        Thread.sleep(3000);
         milestoneReviewPage.getStartMilestone().click();
-
+        Thread.sleep(3000);
         milestoneReviewPage.getStartMilestoneButton().click();
 
         return checkStartMilestone;

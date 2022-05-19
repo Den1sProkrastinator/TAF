@@ -29,7 +29,7 @@ public class MilestonesTests extends BaseTest {
     }
 
     @Test(priority = 3)
-    public void startMilestone() {
+    public void startMilestone() throws InterruptedException {
         loginAndOpenMilestoneMenu();
         milestonesStep.readMilestones("Denis");
 
