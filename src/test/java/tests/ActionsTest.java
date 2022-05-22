@@ -1,34 +1,30 @@
 package tests;
 
 import baseEntities.BaseTest;
-import org.apache.hc.client5.http.classic.methods.HttpGet;
-import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
-import org.apache.hc.client5.http.impl.classic.HttpClients;
-import org.apache.hc.core5.http.HttpResponse;
-import org.apache.hc.core5.http.protocol.BasicHttpContext;
+
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import services.WaitsService;
 
-import java.io.File;
+
 import java.time.Duration;
-import java.util.List;
+
 
 public class ActionsTest extends BaseTest {
 
 
-
     @Test
-    public void contextMenu()  {
+    public void contextMenuTest() {
         driver.get("http://the-internet.herokuapp.com/context_menu");
 
         Actions actions = new Actions(driver);
-
 
         WaitsService wait = new WaitsService(driver, Duration.ofSeconds(10));
 
@@ -41,7 +37,6 @@ public class ActionsTest extends BaseTest {
                 .perform();
 
 
-
         Alert alert = driver.switchTo().alert();
         alert.accept();
 
@@ -49,7 +44,7 @@ public class ActionsTest extends BaseTest {
 
 
     @Test
-    public void dynamicControls() throws InterruptedException {
+    public void dynamicControlsTest() throws InterruptedException {
         driver.get("http://the-internet.herokuapp.com/dynamic_controls");
 
         Actions actions = new Actions(driver);
@@ -73,7 +68,7 @@ public class ActionsTest extends BaseTest {
         Assert.assertTrue(wait.waitForVisibilityLocatedBy(By.id("message")).isDisplayed());
 
         Assert.assertTrue(wait.waitForElementInvisible(checkBoxLocator));
-        Assert.assertTrue(wait.waitForExists(By.cssSelector("[type='text']")).getAttribute("disabled")!=null);
+        Assert.assertTrue(wait.waitForExists(By.cssSelector("[type='text']")).getAttribute("disabled") != null);
 
         actions
                 .moveToElement(enableDisableButtonLocator)
@@ -83,46 +78,86 @@ public class ActionsTest extends BaseTest {
 
         Assert.assertTrue(wait.waitForVisibilityLocatedBy(By.id("message")).isDisplayed());
 
-        Assert.assertTrue(wait.waitForExists(By.cssSelector("[type='text']")).getAttribute("disabled")==null);
+        Assert.assertTrue(wait.waitForExists(By.cssSelector("[type='text']")).getAttribute("disabled") == null);
 
     }
 
     @Test
-    public void fileUpload()  {
+    public void fileUploadTest() {
         driver.get("http://the-internet.herokuapp.com/upload");
 
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 
         WaitsService wait = new WaitsService(driver, Duration.ofSeconds(10));
 
         WebElement fileUploadPath = wait.waitForExists(By.id("file-upload"));
-//        String pathToFile = ActionsTest.class.getClassLoader().getResource("download.jpg").getPath();
 
 
         fileUploadPath.sendKeys("C:\\TeachMeSkilsCourse\\TAF\\src\\test\\resources\\download.jpg");
-        wait.waitForExists(By.id("file-submit")).submit();
+
+        jsExecutor.executeScript("arguments[0].click();", wait.waitForExists(By.id("file-submit")));
+
+        Assert.assertEquals(wait.waitForExists(By.className("example")).getText(), "File Uploaded!\n" +
+                "download.jpg");
 
 
     }
 
 
     @Test
-    public void fileDownload() throws InterruptedException{
+    public void fileDownloadTest() {
         driver.get("http://the-internet.herokuapp.com/download");
 
         WaitsService wait = new WaitsService(driver, Duration.ofSeconds(10));
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 
         WebElement fileDownloadPath = wait.waitForExists(By.linkText("some-file.txt"));
 
-        fileDownloadPath .click();
 
-        Thread.sleep(500);
+        jsExecutor.executeScript("arguments[0].click();", fileDownloadPath);
 
-        fileDownloadPath.click();
 
-        Thread.sleep(15000);
+    }
+
+    @Test
+
+    public void iFrameTest() {
+        driver.get("http://the-internet.herokuapp.com/iframe");
+
+        WaitsService wait = new WaitsService(driver, Duration.ofSeconds(30));
+
+        driver.switchTo().frame(wait.waitForExists(By.id("mce_0_ifr")));
+        Assert.assertEquals(wait.waitForExists(By.cssSelector("#tinymce")).getText(), "Your content goes here.");
+        driver.switchTo().parentFrame();
+        driver.switchTo().defaultContent();
 
     }
 
 
+    @Test
+    public void javaScriptAlertsTest() {
+        driver.get("http://the-internet.herokuapp.com/javascript_alerts");
 
+
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+
+        String muText = "Text for test";
+        WebElement webElement = driver.findElement(By.xpath("//button[@onclick='jsPrompt()']"));
+
+
+        jsExecutor.executeScript("arguments[0].click();", webElement);
+
+
+        Alert alert = driver.switchTo().alert();
+
+
+        alert.sendKeys(muText);
+
+
+        alert.accept();
+
+        Assert.assertEquals(driver.findElement(By.id("result")).getText(), "You entered: " + muText);
+
+
+    }
 }
