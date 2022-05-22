@@ -113,7 +113,6 @@ public class ActionsTest extends BaseTest {
 
         WebElement fileDownloadPath = wait.waitForExists(By.linkText("some-file.txt"));
 
-
         fileDownloadPath .click();
 
         Thread.sleep(500);
