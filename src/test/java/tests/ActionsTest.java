@@ -1,6 +1,11 @@
 package tests;
 
 import baseEntities.BaseTest;
+import org.apache.hc.client5.http.classic.methods.HttpGet;
+import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
+import org.apache.hc.client5.http.impl.classic.HttpClients;
+import org.apache.hc.core5.http.HttpResponse;
+import org.apache.hc.core5.http.protocol.BasicHttpContext;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -10,6 +15,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import services.WaitsService;
 
+import java.io.File;
 import java.time.Duration;
 import java.util.List;
 
@@ -18,7 +24,7 @@ public class ActionsTest extends BaseTest {
 
 
     @Test
-    public void contextMenu() throws InterruptedException {
+    public void contextMenu()  {
         driver.get("http://the-internet.herokuapp.com/context_menu");
 
         Actions actions = new Actions(driver);
@@ -38,7 +44,7 @@ public class ActionsTest extends BaseTest {
 
         Alert alert = driver.switchTo().alert();
         alert.accept();
-        Thread.sleep(2000);
+
     }
 
 
@@ -74,7 +80,7 @@ public class ActionsTest extends BaseTest {
                 .click()
                 .build()
                 .perform();
-        Thread.sleep(2000);
+
         Assert.assertTrue(wait.waitForVisibilityLocatedBy(By.id("message")).isDisplayed());
 
         Assert.assertTrue(wait.waitForExists(By.cssSelector("[type='text']")).getAttribute("disabled")==null);
@@ -82,7 +88,7 @@ public class ActionsTest extends BaseTest {
     }
 
     @Test
-    public void fileUpload() throws InterruptedException{
+    public void fileUpload()  {
         driver.get("http://the-internet.herokuapp.com/upload");
 
 
@@ -94,10 +100,30 @@ public class ActionsTest extends BaseTest {
 
         fileUploadPath.sendKeys("C:\\TeachMeSkilsCourse\\TAF\\src\\test\\resources\\download.jpg");
         wait.waitForExists(By.id("file-submit")).submit();
-        Thread.sleep(2000);
-
-
 
 
     }
+
+
+    @Test
+    public void fileDownload() throws InterruptedException{
+        driver.get("http://the-internet.herokuapp.com/download");
+
+        WaitsService wait = new WaitsService(driver, Duration.ofSeconds(10));
+
+        WebElement fileDownloadPath = wait.waitForExists(By.linkText("some-file.txt"));
+
+
+        fileDownloadPath .click();
+
+        Thread.sleep(500);
+
+        fileDownloadPath.click();
+
+        Thread.sleep(15000);
+
+    }
+
+
+
 }

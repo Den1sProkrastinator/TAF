@@ -9,12 +9,12 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 
 public class BrowsersService {
     private WebDriver driver = null;
-
 
 
     public BrowsersService() {
@@ -30,6 +30,14 @@ public class BrowsersService {
                 chromeOptions.addArguments("--ignore-certificate-errors");
                 chromeOptions.addArguments("--silent");
                 chromeOptions.addArguments("--start-maximized");
+
+//скачивание
+                HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+                chromePrefs.put("profile.default_content_settings.popups", 0);
+                chromePrefs.put("download.default_directory", System.getProperty("user.dir"));
+                ChromeOptions options = new ChromeOptions();
+                options.setExperimentalOption("prefs", chromePrefs);
+
 
                 driver = new ChromeDriver(chromeOptions);
 
@@ -59,8 +67,8 @@ public class BrowsersService {
         driver.manage().timeouts().scriptTimeout(Duration.ofSeconds(60));
 
 
-
-
         return driver;
     }
+
+
 }
