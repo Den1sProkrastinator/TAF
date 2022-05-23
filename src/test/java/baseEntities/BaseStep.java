@@ -1,22 +1,29 @@
 package baseEntities;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
-import pages.DashboardPage;
-import pages.LoginPage;
-import pages.ProjectsPage;
+import org.openqa.selenium.interactions.Actions;
+import pages.ContextMenuPage;
+import pages.DynamicControlsPage;
+
 
 public class BaseStep {
     protected WebDriver driver;
-    protected LoginPage loginPage;
-    protected DashboardPage dashboardPage;
-    protected ProjectsPage projectsPage;
+
+    protected Actions actions;
+    protected ContextMenuPage contextMenuPage;
+
+    protected DynamicControlsPage dynamicControlsPage;
 
 
     public BaseStep(WebDriver driver) {
         this.driver = driver;
 
-        loginPage = new LoginPage(driver);
-        dashboardPage = new DashboardPage(driver);
-        projectsPage = new ProjectsPage(driver);
+        actions = new Actions(driver);
+
+        contextMenuPage = new ContextMenuPage(driver);
+
+        dynamicControlsPage =new DynamicControlsPage(driver);
+
     }
 }
