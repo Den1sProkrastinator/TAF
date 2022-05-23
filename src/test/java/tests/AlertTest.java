@@ -56,7 +56,7 @@ public class AlertTest extends BaseTest {
 
         alert.sendKeys("Test message");
 
-        Assert.assertEquals(alert.getText(), "You entered: Test message");
+        Assert.assertEquals(alert.getText(), "I am a JS prompt");
 
 
 
