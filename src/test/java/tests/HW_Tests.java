@@ -17,7 +17,7 @@ import services.WaitsService;
 import java.time.Duration;
 
 
-public class ActionsTest extends BaseTest {
+public class HW_Tests extends BaseTest {
 
 
     @Test
