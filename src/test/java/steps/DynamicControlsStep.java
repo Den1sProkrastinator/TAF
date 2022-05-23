@@ -20,7 +20,9 @@ public class DynamicControlsStep extends BaseStep {
                 .click()
                 .build()
                 .perform();
+
         Thread.sleep(2000);
+
         actions
                 .moveToElement(dynamicControlsPage.getSwapCheckboxSpot())
                 .click()
@@ -30,9 +32,8 @@ public class DynamicControlsStep extends BaseStep {
         return dynamicControlsPage;
     }
 
-//    public DynamicControlsPage checkElementIsInvisible(){
-//        return  dynamicControlsPage.getI
-//    }
+
+
 
     public  void enableDisableClick(){
 
