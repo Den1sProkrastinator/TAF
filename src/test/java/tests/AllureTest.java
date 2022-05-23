@@ -38,8 +38,28 @@ public class AllureTest {
         step("Admin");
         Assert.assertTrue(true);
     }
+
     @Step("Username {user}")
-    private void step(String user){
+    private void step(String user) {
         System.out.println(user);
+    }
+
+    @Test
+    @Issue("ID-123")
+    public void testIssue() {
+        Assert.assertTrue(true);
+    }
+
+    @Test
+    @TmsLink("IC-532")
+    public void testTms() {
+        Assert.assertTrue(true);
+    }
+
+    @Test
+    @Link("https://examplee.org")
+    @Link(name = "allureLink",type="myLink",url="https://onliner.by")
+    public void testLink() {
+        Assert.assertTrue(true);
     }
 }
