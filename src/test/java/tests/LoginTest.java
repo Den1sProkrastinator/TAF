@@ -1,12 +1,9 @@
 package tests;
 
 import org.testng.Assert;
-import pages.DashboardPage;
-import pages.LoginPage;
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
 import org.testng.annotations.Test;
-import steps.LoginStep;
 
 public class LoginTest extends BaseTest {
 
