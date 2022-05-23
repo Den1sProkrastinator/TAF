@@ -16,7 +16,6 @@ public class DynamicControlTest extends BaseTest {
 
         WaitsService wait = new WaitsService(driver, Duration.ofSeconds(10));
 
-
         Assert.assertTrue(dynamicControlsStep.removeDynamicControls().checkedElementIsInvisible());
 
 
