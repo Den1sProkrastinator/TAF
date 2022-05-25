@@ -11,8 +11,11 @@ public class DynamicControlsPage extends BasePage {
     private By checkboxLocator = By.cssSelector("[type='checkbox']");
     private By swapCheckboxLocator = By.cssSelector("[onclick='swapCheckbox()']");
     private By swapInputLocator = By.cssSelector("[onclick='swapInput()']");
-
     private By messageLocator = By.id("message");
+
+    private By  textLocator =By.cssSelector("[type='text']");
+
+
 
 
 
@@ -29,12 +32,12 @@ public class DynamicControlsPage extends BasePage {
 
     @Override
     protected By getInvisibleElementIdentifier() {
-        return messageLocator;
+        return checkboxLocator;
     }
 
     @Override
     protected By getVisibleElementIdentifier() {
-        return checkboxLocator;
+        return messageLocator;
     }
 
 
@@ -58,5 +61,10 @@ public class DynamicControlsPage extends BasePage {
     public WebElement getMessageSpot() {
         return waitsService.waitForExists(messageLocator);
     }
+    public WebElement getTextLocator() {
+        return waitsService.waitForExists(textLocator);
+    }
+
+
 
 }

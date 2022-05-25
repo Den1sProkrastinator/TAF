@@ -34,7 +34,6 @@ public class DynamicControlsStep extends BaseStep {
 
 
 
-
     public  void enableDisableClick(){
 
 
@@ -44,4 +43,20 @@ public class DynamicControlsStep extends BaseStep {
                 .build()
                 .perform();
     }
+
+    public DynamicControlsPage getCheckboxr(){
+        return dynamicControlsPage;
+    }
+
+    public DynamicControlsPage getTexWebelement(){
+        return dynamicControlsPage;
+    }
+
+    public boolean elementStatusIsDisabled(){
+       return   dynamicControlsPage.getTextLocator().getAttribute("disabled") != null;
+    }
+      public boolean elementStatusIsEnabled(){
+       return   dynamicControlsPage.getTextLocator().getAttribute("disabled") == null;
+    }
+
 }
