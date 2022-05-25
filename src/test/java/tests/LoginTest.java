@@ -23,7 +23,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void incorrectEmailLoginTest() {
         Assert.assertEquals(loginStep.incorrectLogin("sfaf",ReadProperties.password())
-                .getErrorTextElement().getText(),"Email/Login or Password is incorrect. Please try again.",
+                .errorText.getText(),"Email/Login or Password is incorrect. Please try again.",
                 "Неверное сообщение об ошибке");
         Assert.assertTrue(false);
     }
@@ -33,7 +33,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void incorrectPswLoginTest() {
         Assert.assertEquals(loginStep.incorrectLogin(ReadProperties.username(),"233")
-                        .getErrorTextElement().getText(),"Email/Login or Password is incorrect. Please try again.",
+                        .errorText.getText(),"Email/Login or Password is incorrect. Please try again.",
                 "Неверное сообщение об ошибке");
 
     }
