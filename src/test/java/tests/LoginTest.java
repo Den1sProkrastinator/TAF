@@ -1,5 +1,6 @@
 package tests;
 
+import models.User;
 import org.testng.Assert;
 import pages.DashboardPage;
 import pages.LoginPage;
@@ -14,15 +15,23 @@ public class LoginTest extends BaseTest {
     @Test
     public void successLoginTest() {
 
+        User user = new User();
+        user.setEmail(ReadProperties.username());
+        user.setPsw(ReadProperties.password());
+
         Assert.assertTrue( loginStep.successLogin(
-                ReadProperties.username(),
-                ReadProperties.password()).
+               user).
                 isPageOpened());
     }
 
     @Test
     public void incorrectEmailLoginTest() {
-        Assert.assertEquals(loginStep.incorrectLogin("sfaf",ReadProperties.password())
+        User user = new User();
+        user.setEmail(ReadProperties.username());
+        user.setPsw("ReadProperties.password()");
+
+
+        Assert.assertEquals(loginStep.incorrectLogin(user)
                 .getErrorTextElement().getText(),"Email/Login or Password is incorrect. Please try again.",
                 "Неверное сообщение об ошибке");
         Assert.assertTrue(false);
@@ -32,7 +41,11 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void incorrectPswLoginTest() {
-        Assert.assertEquals(loginStep.incorrectLogin(ReadProperties.username(),"233")
+        User user = new User();
+        user.setEmail(ReadProperties.username());
+        user.setPsw("ReadProperties.password()");
+
+        Assert.assertEquals(loginStep.incorrectLogin(user)
                         .getErrorTextElement().getText(),"Email/Login or Password is incorrect. Please try again.",
                 "Неверное сообщение об ошибке");
 
