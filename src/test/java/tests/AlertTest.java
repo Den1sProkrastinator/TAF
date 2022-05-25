@@ -1,12 +1,14 @@
 package tests;
 
 import baseEntities.BaseTest;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import io.qameta.allure.Allure;
+import org.openqa.selenium.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import services.WaitsService;
+
+import java.io.ByteArrayInputStream;
+import java.util.UUID;
 
 public class AlertTest extends BaseTest {
 
@@ -58,9 +60,7 @@ public class AlertTest extends BaseTest {
 
         Assert.assertEquals(alert.getText(), "I am a JS prompt");
 
-
-
-
+        Allure.addAttachment(UUID.randomUUID().toString(), new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
     }
 
 }
