@@ -1,6 +1,7 @@
 package tests;
 
 import models.User;
+import models.UserBuilder;
 import org.testng.Assert;
 import pages.DashboardPage;
 import pages.LoginPage;
@@ -48,6 +49,17 @@ public class LoginTest extends BaseTest {
         Assert.assertEquals(loginStep.incorrectLogin(user)
                         .getErrorTextElement().getText(),"Email/Login or Password is incorrect. Please try again.",
                 "Неверное сообщение об ошибке");
+    }
+
+    @Test
+    public void successLoginBuilderTest() {
+        UserBuilder user = new UserBuilder.Builder()
+                .withEmail("sss")
+                .withPSW("22222")
+                .build();
+
+
+
 
     }
 }
