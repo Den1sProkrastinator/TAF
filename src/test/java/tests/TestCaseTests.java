@@ -10,8 +10,8 @@ public class TestCaseTests extends BaseTest {
         //Написать CRUD тесты на Milestones
         // 1.создание Milestone +
         // 2.чтение Milestone +
-        // 3.старт +/- работает без проверки
-        // 3.модификация Milestone +/-нет прооверки
+        // 3.старт +
+        // 3.модификация Milestone +
         // 4.удаление Milestone
 
 
