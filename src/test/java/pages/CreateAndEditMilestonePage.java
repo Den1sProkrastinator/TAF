@@ -4,53 +4,43 @@ import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
 
 public class CreateAndEditMilestonePage extends BasePage {
     public CreateAndEditMilestonePage(WebDriver driver) {
         super(driver);
     }
     //локаторы
-    private By nameLocator = By.id("name");
-    private By referenceLocator = By.id("reference");
-    private By descriptionDisplayLocator = By.id("description_display");
-    private By startDateLocator = By.id("start_on");
-    private By endDateLocator = By.id("due_on");
-    private By addMilestoneButtonLocator = By.id("accept");
+
+    @FindBy(id="name")
+    public WebElement name;
+
+    @FindBy(id="reference")
+    public WebElement reference;
+
+    @FindBy(id="description_display")
+    public WebElement descriptionDisplay;
+
+    @FindBy(id="start_on")
+    public WebElement startDate;
+
+    @FindBy(id="due_on")
+    public WebElement endDate;
+
+    @FindBy(id="accept")
+    public WebElement addMilestoneButton;
 
 
     //локатор проверки
-    private By successStartMilestoneButtonLocator = By.xpath(
-            "//div[@class='message message-success' and text()='Successfully added the new milestone.']");
+    @FindBy(xpath = "//div[@class='message message-success' and text()='Successfully added the new milestone.']")
+   public By successStartMilestoneButton;
 
     @Override
-    protected By getPageIdentifier() {
-        return successStartMilestoneButtonLocator;
+    protected WebElement getPageIdentifier() {
+        return  driver.findElement(successStartMilestoneButton);
     }
 
-    //атомарные методы
-    public WebElement getName() {
-        return driver.findElement(nameLocator);
-    }
-
-    public WebElement getReference() {
-        return driver.findElement(referenceLocator);
-    }
-
-    public WebElement getDescriptionDisplay() {
-        return driver.findElement(descriptionDisplayLocator);
-    }
-
-    public WebElement getStartDate() {
-        return driver.findElement(startDateLocator);
-    }
-
-    public WebElement getEndDate() {
-        return driver.findElement(endDateLocator);
-    }
-
-    public WebElement getAddMilestoneButton() {
-        return driver.findElement(addMilestoneButtonLocator);
-    }
 
 
 }

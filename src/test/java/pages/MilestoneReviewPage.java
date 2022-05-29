@@ -23,7 +23,7 @@ public class MilestoneReviewPage extends BasePage {
 
 
     @Override
-    protected By getPageIdentifier() {
+    protected WebElement getPageIdentifier() {
         return milestoneIsOpening;
     }
 

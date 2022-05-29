@@ -11,19 +11,20 @@ public class CreateAndEditMilestoneStep extends BaseStep {
         super(driver);
     }
     public CreateAndEditMilestonePage createMilestones(String name, String reference, String description, String startDate, String endDate) {
-        createAndEditMilestonePage.getName().sendKeys(name);
-        createAndEditMilestonePage.getReference().sendKeys(reference);
-        createAndEditMilestonePage.getDescriptionDisplay().sendKeys(description);
-        createAndEditMilestonePage.getStartDate().sendKeys(startDate);
-        createAndEditMilestonePage.getEndDate().sendKeys(endDate);
-        createAndEditMilestonePage.getAddMilestoneButton().click();
+        createAndEditMilestonePage.name.sendKeys(name);
+
+        createAndEditMilestonePage.reference.sendKeys(reference);
+        createAndEditMilestonePage.descriptionDisplay.sendKeys(description);
+        createAndEditMilestonePage.startDate.sendKeys(startDate);
+        createAndEditMilestonePage.endDate.sendKeys(endDate);
+        createAndEditMilestonePage.addMilestoneButton.click();
         return createAndEditMilestonePage;
     }
 
     public MilestoneReviewPage.CheckSuccessUpdate editMilestone(String editDescription) throws InterruptedException {
         milestoneReviewPage.getEditButton().click();
-        createAndEditMilestonePage.getDescriptionDisplay().sendKeys(editDescription);
-        createAndEditMilestonePage.getAddMilestoneButton().click();
+        createAndEditMilestonePage.descriptionDisplay.sendKeys(editDescription);
+        createAndEditMilestonePage.addMilestoneButton.click();
         Thread.sleep(3000);
         return checkSuccessUpdate;
     }

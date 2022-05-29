@@ -18,8 +18,8 @@ public class LoginPage extends BasePage {
     }
 
     @Override
-    protected By getPageIdentifier() {
-        return emailInputLocator;
+    protected WebElement getPageIdentifier() {
+        return driver.findElement(emailInputLocator);
     }
 
     // Блок атомарных методов

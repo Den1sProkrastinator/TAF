@@ -18,8 +18,8 @@ public class DashboardPage extends BasePage {
     }
 
     @Override
-    protected By getPageIdentifier() {
-        return headerTitleLabelLocator;
+    protected WebElement getPageIdentifier() {
+        return null;
     }
 
     public void openPageByUrl() {
