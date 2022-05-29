@@ -4,12 +4,15 @@ import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class DashboardPage extends BasePage {
-    private final static String pagePath = "/index.php?/dashboard";
+
 
     // Блок описания селекторов для элементов
-    private By headerTitleLabelLocator = By.xpath("//div[contains(@class, 'content-header-title') and contains(text(), 'Dashboard')]");
+
+    @FindBy(xpath = "//div[contains(@class, 'content-header-title') and contains(text(), 'Dashboard')]")
+    public WebElement headerTitleLabel;
     private String projectNameLocator="//div/a[@style and text()='Replace']";
 
     public DashboardPage(WebDriver driver) {
@@ -19,15 +22,13 @@ public class DashboardPage extends BasePage {
 
     @Override
     protected WebElement getPageIdentifier() {
-        return null;
+        return headerTitleLabel;
     }
 
-    public void openPageByUrl() {
-        super.openPageByUrl(pagePath);
-    }
+
+
 
     // Блок атомарных методов
-
 
     public WebElement getProjectByName(String projectName){
         return driver.findElement(By.xpath(projectNameLocator.replace("Replace",projectName)));

@@ -8,9 +8,7 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 
 public class CreateAndEditMilestonePage extends BasePage {
-    public CreateAndEditMilestonePage(WebDriver driver) {
-        super(driver);
-    }
+
     //локаторы
 
     @FindBy(id="name")
@@ -33,12 +31,16 @@ public class CreateAndEditMilestonePage extends BasePage {
 
 
     //локатор проверки
-    @FindBy(xpath = "//div[@class='message message-success' and text()='Successfully added the new milestone.']")
-   public By successStartMilestoneButton;
+    @FindBy(xpath = "//div[@class='message message-success']") // and text()='Successfully added the new milestone.'
+     public WebElement successStartMilestone;
+
+    public CreateAndEditMilestonePage(WebDriver driver) {
+        super(driver);
+    }
 
     @Override
     protected WebElement getPageIdentifier() {
-        return  driver.findElement(successStartMilestoneButton);
+        return null;
     }
 
 

@@ -4,43 +4,37 @@ import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class ProjectsPage extends BasePage {
-    private final static String pagePath = "/index.php?/admin/projects/overview";
 
-    private By headerTitleLabelName = By.xpath(
-            "//div[contains(@class, 'content-header-title') and contains(text(), '')]");
-    private  String  navigationName ="//div//li/a[text()='Replace']";
-    private By addMilestonesLocator = By.id("navigation-milestones-add");
+    //локаторы
+    @FindBy(xpath = "//div[contains(@class, 'content-header-title') and contains(text(), '')]")
+    public WebElement headerTitleLabelName;
+
+
+    @FindBy(id = "navigation-milestones-add")
+    public WebElement addMilestones;
+
+    private String navigationName = "//div//li/a[text()='Replace']";
+
 
     public ProjectsPage(WebDriver driver) {
         super(driver);
 
     }
 
+
+    //атомарные методы
     @Override
-    protected By getPageIdentifier() {
+    protected WebElement getPageIdentifier() {
         return headerTitleLabelName;
     }
 
-    public void openPageByUrl() {
-        super.openPageByUrl(pagePath);
+
+    public WebElement getMenuByName(String menuName) {
+        return driver.findElement(By.xpath(navigationName.replace("Replace", menuName)));
     }
-
-
-    public WebElement getProjectByNameLocator(){
-        return   driver.findElement(headerTitleLabelName);
-    }
-
-
-    public WebElement getMenuByName(String menuName){
-        return driver.findElement(By.xpath(navigationName.replace("Replace",menuName)));
-    }
-    public WebElement getAddMilestones(){
-        return  driver.findElement(addMilestonesLocator);
-    }
-
-
 
 
 }

@@ -12,7 +12,7 @@ public class MilestonesStep extends BaseStep {
     }
 
     public void addMilestones() {
-        milestonesPage.getAddMilestones().click();
+        milestonesPage.addMilestones.click();
 
     }
 
@@ -23,12 +23,12 @@ public class MilestonesStep extends BaseStep {
     }
 
 
-    public MilestonesPage.CheckDeleteMilestone deleteMilestone(String milestoneName) throws InterruptedException {
+    public void deleteMilestone(String milestoneName) throws InterruptedException {
 
         milestonesPage.getDeleteButton(milestoneName).click();
-        milestonesPage.getOkButton().click();
+        milestonesPage.okButton.click();
         Thread.sleep(2000);
-        return checkDeleteMilestone;
+
     }
 
 
