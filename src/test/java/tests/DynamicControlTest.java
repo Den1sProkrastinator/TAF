@@ -12,7 +12,7 @@ import java.time.Duration;
 public class DynamicControlTest extends BaseTest {
 
     @Test
-    public void dynamicControlTest() throws InterruptedException {
+    public void dynamicControlTest()  {
 
 
 

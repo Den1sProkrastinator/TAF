@@ -9,6 +9,7 @@ import services.BrowsersService;
 import services.WaitsService;
 import steps.ContextMenuStep;
 import steps.DynamicControlsStep;
+import steps.FileUploadStep;
 
 import java.time.Duration;
 
@@ -19,6 +20,8 @@ public class BaseTest {
 
     protected DynamicControlsStep dynamicControlsStep;
 
+    protected FileUploadStep fileUploadStep;
+
     protected WaitsService wait;
 
 
@@ -27,6 +30,7 @@ public class BaseTest {
         driver = new BrowsersService().getDriver();
         contextMenuStep = new ContextMenuStep(driver);
         dynamicControlsStep = new DynamicControlsStep(driver);
+        fileUploadStep= new FileUploadStep(driver);
         wait= new WaitsService(driver, Duration.ofSeconds(30));
     }
 

@@ -14,7 +14,7 @@ public class DynamicControlsStep extends BaseStep {
         dynamicControlsPage.openPageByUrl();
     }
 
-    public DynamicControlsPage removeDynamicControls() throws InterruptedException {
+    public DynamicControlsPage removeDynamicControls()  {
 
         actions
                 .moveToElement(dynamicControlsPage.getCheckbox())
@@ -22,14 +22,14 @@ public class DynamicControlsStep extends BaseStep {
                 .build()
                 .perform();
 
-        Thread.sleep(2000);
+
 
         actions
                 .moveToElement(dynamicControlsPage.getSwapCheckboxSpot())
                 .click()
                 .build()
                 .perform();
-        Thread.sleep(2000);
+
         return dynamicControlsPage;
     }
 

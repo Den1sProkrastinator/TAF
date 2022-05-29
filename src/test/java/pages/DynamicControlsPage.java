@@ -25,15 +25,7 @@ public class DynamicControlsPage extends BasePage {
         return null;
     }
 
-    @Override
-    protected By getInvisibleElementIdentifier() {
-        return checkboxLocator;
-    }
 
-    @Override
-    protected By getVisibleElementIdentifier() {
-        return messageLocator;
-    }
 
 
     public void openPageByUrl() {

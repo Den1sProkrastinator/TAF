@@ -24,9 +24,7 @@ public abstract class BasePage {
 
     protected abstract By getPageIdentifier();
 
-    protected  abstract By getInvisibleElementIdentifier();
 
-    protected abstract   By getVisibleElementIdentifier();
 
 
     public boolean isPageOpened() {

@@ -21,15 +21,7 @@ public class ContextMenuPage extends BasePage {
         return null;
     }
 
-    @Override
-    protected By getInvisibleElementIdentifier() {
-        return null;
-    }
 
-    @Override
-    protected By getVisibleElementIdentifier() {
-        return null;
-    }
 
     public void openPageByUrl() {
         super.openPageByUrl(pagePath);

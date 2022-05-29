@@ -43,7 +43,6 @@ public class ContextMenuTests extends BaseTest {
         Assert.assertEquals(wait.waitForExists(By.className("example")).getText(), "File Uploaded!\n" +
                 "download.jpg");
 
-
     }
 
 
