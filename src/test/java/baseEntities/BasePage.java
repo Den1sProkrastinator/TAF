@@ -33,13 +33,6 @@ public abstract class BasePage {
         return waitsService.waitForExists(getPageIdentifier()).isDisplayed();
     }
 
-    public boolean checkedElementIsVisible(){
-        return waitsService.waitForExists(getVisibleElementIdentifier()).isDisplayed();
-    }
-    public boolean checkedElementIsInvisible(){
-        return waitsService.waitForExists(getInvisibleElementIdentifier()).isEnabled();
-    }
-
     public void openPageByUrl(String pagePath) {
         driver.get(ReadProperties.getUrl() + pagePath);
     }

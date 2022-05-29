@@ -13,12 +13,7 @@ public class DynamicControlsPage extends BasePage {
     private By swapInputLocator = By.cssSelector("[onclick='swapInput()']");
     private By messageLocator = By.id("message");
 
-    private By  textLocator =By.cssSelector("[type='text']");
-
-
-
-
-
+    private By textLocator = By.cssSelector("[type='text']");
 
 
     public DynamicControlsPage(WebDriver driver) {
@@ -46,7 +41,7 @@ public class DynamicControlsPage extends BasePage {
     }
 
 
-    public WebElement getCheckboxSpot() {
+    public WebElement getCheckbox() {
         return waitsService.waitForExists(checkboxLocator);
     }
 
@@ -61,10 +56,10 @@ public class DynamicControlsPage extends BasePage {
     public WebElement getMessageSpot() {
         return waitsService.waitForExists(messageLocator);
     }
+
     public WebElement getTextLocator() {
         return waitsService.waitForExists(textLocator);
     }
-
 
 
 }

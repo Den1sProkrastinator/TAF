@@ -2,6 +2,7 @@ package steps;
 
 import baseEntities.BaseStep;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pages.DynamicControlsPage;
 
 public class DynamicControlsStep extends BaseStep {
@@ -9,14 +10,14 @@ public class DynamicControlsStep extends BaseStep {
         super(driver);
     }
 
-    public void openPage(){
+    public void openPage() {
         dynamicControlsPage.openPageByUrl();
     }
+
     public DynamicControlsPage removeDynamicControls() throws InterruptedException {
 
-
         actions
-                .moveToElement(dynamicControlsPage.getCheckboxSpot())
+                .moveToElement(dynamicControlsPage.getCheckbox())
                 .click()
                 .build()
                 .perform();
@@ -33,8 +34,7 @@ public class DynamicControlsStep extends BaseStep {
     }
 
 
-
-    public  void enableDisableClick(){
+    public void enableDisableClick() {
 
 
         actions
@@ -44,19 +44,21 @@ public class DynamicControlsStep extends BaseStep {
                 .perform();
     }
 
-    public DynamicControlsPage getCheckboxr(){
-        return dynamicControlsPage;
+
+    public boolean elementStatusIsDisabled() {
+        return dynamicControlsPage.getTextLocator().getAttribute("disabled") != null;
     }
 
-    public DynamicControlsPage getTexWebelement(){
-        return dynamicControlsPage;
+    public boolean elementStatusIsEnabled() {
+        return dynamicControlsPage.getTextLocator().getAttribute("disabled") == null;
     }
 
-    public boolean elementStatusIsDisabled(){
-       return   dynamicControlsPage.getTextLocator().getAttribute("disabled") != null;
+
+    public WebElement getMessageElement() {
+        return dynamicControlsPage.getMessageSpot();
     }
-      public boolean elementStatusIsEnabled(){
-       return   dynamicControlsPage.getTextLocator().getAttribute("disabled") == null;
-    }
+
 
 }
+
+

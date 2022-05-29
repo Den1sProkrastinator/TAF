@@ -12,7 +12,6 @@ public class ContextMenuPage extends BasePage {
     private By hotSpotLocator = By.id("hot-spot");
 
 
-
     public ContextMenuPage(WebDriver driver) {
         super(driver);
     }

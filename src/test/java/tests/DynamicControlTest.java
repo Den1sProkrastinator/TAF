@@ -14,19 +14,26 @@ public class DynamicControlTest extends BaseTest {
     @Test
     public void dynamicControlTest() throws InterruptedException {
 
+
+
         dynamicControlsStep.openPage();
 
-        Assert.assertTrue(dynamicControlsStep.removeDynamicControls().checkedElementIsVisible());
+        WebElement checkBoxLocator = wait.waitForExists(By.cssSelector("[type='checkbox']"));
+        dynamicControlsStep.removeDynamicControls();
+        Assert.assertEquals(dynamicControlsStep.getMessageElement().getText(),"It's gone!");
 
-//        Assert.assertTrue(dynamicControlsStep.getCheckboxLocator().checkedElementIsInvisible()); пройтись дебагом
+        Assert.assertTrue(wait.waitForElementInvisible(checkBoxLocator));
 
         Assert.assertTrue(dynamicControlsStep.elementStatusIsDisabled());
 
+
         dynamicControlsStep.enableDisableClick();
 
-        Assert.assertTrue(wait.waitForVisibilityLocatedBy(By.id("message")).isDisplayed());
+        Assert.assertEquals(dynamicControlsStep.getMessageElement().getText(),"It's enabled!");
 
         Assert.assertTrue(dynamicControlsStep.elementStatusIsEnabled());
 
     }
+
+
 }

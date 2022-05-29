@@ -21,7 +21,6 @@ public class ContextMenuTests extends BaseTest {
 
     @Test
     public void contextMenuTest() {
-
         contextMenuStep.contextMenu();
     }
 
@@ -36,7 +35,6 @@ public class ContextMenuTests extends BaseTest {
         WaitsService wait = new WaitsService(driver, Duration.ofSeconds(30));
 
         WebElement fileUploadPath = wait.waitForExists(By.id("file-upload"));
-
 
         fileUploadPath.sendKeys("C:\\TeachMeSkilsCourse\\TAF\\src\\test\\resources\\download.jpg");
 
