@@ -26,24 +26,7 @@ public class ContextMenuTests extends BaseTest {
 
 
 
-    @Test
-    public void fileUploadTest() {
-        driver.get("http://the-internet.herokuapp.com/upload");
 
-        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-
-        WaitsService wait = new WaitsService(driver, Duration.ofSeconds(30));
-
-        WebElement fileUploadPath = wait.waitForExists(By.id("file-upload"));
-
-        fileUploadPath.sendKeys("C:\\TeachMeSkilsCourse\\TAF\\src\\test\\resources\\download.jpg");
-
-        jsExecutor.executeScript("arguments[0].click();", wait.waitForExists(By.id("file-submit")));
-
-        Assert.assertEquals(wait.waitForExists(By.className("example")).getText(), "File Uploaded!\n" +
-                "download.jpg");
-
-    }
 
 
     @Test
