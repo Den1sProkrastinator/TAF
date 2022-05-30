@@ -11,16 +11,15 @@ public class ProjectsStep extends BaseStep {
         super(driver);
     }
 
-    public void menuNavigation(String menuName){
+    public void menuNavigation(String menuName) {
         projectsPage.getMenuByName(menuName).click();
 
     }
 
-    public void addMilestones(){
+    public void addMilestones() {
         projectsPage.getAddMilestones().click();
 
     }
-
 
 
 }

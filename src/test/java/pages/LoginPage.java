@@ -32,6 +32,5 @@ public class LoginPage extends BasePage {
     public WebElement getLogInButton() {
         return driver.findElement(logInButtonLocator);
     }
-    public WebElement getErrorTextElement() { return driver.findElement(errorTextLocator);
-    }
+
 }

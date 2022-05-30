@@ -21,7 +21,8 @@ public class MilestonesPage extends BasePage {
 
     private By addMilestonesLocator = By.id("navigation-milestones-add");
 
-
+    private By successDeleteLocator = By.xpath(
+            "//div[@class='message message-success']");
 
 
     public MilestonesPage(WebDriver driver) {
@@ -32,9 +33,6 @@ public class MilestonesPage extends BasePage {
     protected By getPageIdentifier() {
         return successAddedLocator;
     }
-
-
-
 
 
     public WebElement getOkButton() {
@@ -54,19 +52,9 @@ public class MilestonesPage extends BasePage {
         return driver.findElement(addMilestonesLocator);
     }
 
-
-
-    //классы для проверки
-    public static class CheckDeleteMilestone extends BasePage {
-        private By successDeleteLocator = By.xpath(
-                "//div[@class='message message-success']");
-        public CheckDeleteMilestone(WebDriver driver) {
-            super(driver);
-        }
-
-        @Override
-        protected By getPageIdentifier() {
-            return successDeleteLocator;
-        }
+    public WebElement getSuccessDeleteMilestone() {
+        return driver.findElement(successDeleteLocator);
     }
+
+
 }

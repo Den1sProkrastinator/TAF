@@ -23,12 +23,12 @@ public class MilestonesStep extends BaseStep {
     }
 
 
-    public MilestonesPage.CheckDeleteMilestone deleteMilestone(String milestoneName) throws InterruptedException {
+    public MilestonesPage deleteMilestone(String milestoneName) throws InterruptedException {
 
         milestonesPage.getDeleteButton(milestoneName).click();
         milestonesPage.getOkButton().click();
         Thread.sleep(2000);
-        return checkDeleteMilestone;
+        return milestonesPage;
     }
 
 

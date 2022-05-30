@@ -12,12 +12,9 @@ public class DashBoardStep extends BaseStep {
         super(driver);
     }
 
-    public void projectSelection(String projectName){
+    public void projectSelection(String projectName) {
         dashboardPage.getProjectByName(projectName).click();
     }
 
-    public ProjectsPage successSelectionProject(){
-        return projectsPage;
-    }
 
 }

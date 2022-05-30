@@ -34,7 +34,7 @@ public class MilestonesTests extends BaseTest {
         milestonesStep.readMilestones("Denis");
 
         Assert.assertEquals(milestoneReviewStep.startMilestone()
-                .getSuccessStart().getText(),"Successfully started the milestone.");
+                .getSuccessStart().getText(), "Successfully started the milestone.");
     }
 
 
@@ -44,14 +44,16 @@ public class MilestonesTests extends BaseTest {
         Thread.sleep(200);
         milestonesStep.readMilestones("Denis");
         Thread.sleep(200);
-        Assert.assertTrue(createAndEditMilestoneStep.editMilestone("Admin").isPageOpened());
+        Assert.assertEquals(createAndEditMilestoneStep.editMilestone("Admin")
+                .getSuccessUpdate().getText(), "Successfully updated the milestone.");
     }
 
     @Test(priority = 5)
     public void deleteMilestone() throws InterruptedException {
         loginAndOpenMilestoneMenu();
 
-       Assert.assertTrue(milestonesStep.deleteMilestone("Denis").isPageOpened());
+        Assert.assertEquals(milestonesStep.deleteMilestone("Denis")
+                .getSuccessDeleteMilestone().getText(), "Successfully deleted the milestone (s).");
     }
 
     private void loginAndOpenMilestoneMenu() {

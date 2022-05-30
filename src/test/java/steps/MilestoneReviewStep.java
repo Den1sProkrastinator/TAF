@@ -16,14 +16,8 @@ public class MilestoneReviewStep extends BaseStep {
         Thread.sleep(2000);
         milestoneReviewPage.getStartMilestoneButton().click();
         Thread.sleep(2000);
-        return  milestoneReviewPage;
+        return milestoneReviewPage;
     }
-
-    public WebElement getSuccessStartLocator(){
-
-        return  milestoneReviewPage.getSuccessStart();
-    }
-
 
 
 }

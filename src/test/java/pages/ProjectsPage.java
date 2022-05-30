@@ -10,7 +10,7 @@ public class ProjectsPage extends BasePage {
 
     private By headerTitleLabelName = By.xpath(
             "//div[contains(@class, 'content-header-title') and contains(text(), '')]");
-    private  String  navigationName ="//div//li/a[text()='Replace']";
+    private String navigationName = "//div//li/a[text()='Replace']";
     private By addMilestonesLocator = By.id("navigation-milestones-add");
 
     public ProjectsPage(WebDriver driver) {
@@ -28,19 +28,18 @@ public class ProjectsPage extends BasePage {
     }
 
 
-    public WebElement getProjectByNameLocator(){
-        return   driver.findElement(headerTitleLabelName);
+    public WebElement getProjectByNameLocator() {
+        return driver.findElement(headerTitleLabelName);
     }
 
 
-    public WebElement getMenuByName(String menuName){
-        return driver.findElement(By.xpath(navigationName.replace("Replace",menuName)));
-    }
-    public WebElement getAddMilestones(){
-        return  driver.findElement(addMilestonesLocator);
+    public WebElement getMenuByName(String menuName) {
+        return driver.findElement(By.xpath(navigationName.replace("Replace", menuName)));
     }
 
-
+    public WebElement getAddMilestones() {
+        return driver.findElement(addMilestonesLocator);
+    }
 
 
 }

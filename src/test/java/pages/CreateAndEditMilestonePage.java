@@ -9,6 +9,7 @@ public class CreateAndEditMilestonePage extends BasePage {
     public CreateAndEditMilestonePage(WebDriver driver) {
         super(driver);
     }
+
     //локаторы
     private By nameLocator = By.id("name");
     private By referenceLocator = By.id("reference");
