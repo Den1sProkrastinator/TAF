@@ -1,7 +1,6 @@
 package pages;
 
 import baseEntities.BasePage;
-import baseEntities.BaseStep;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,9 +8,8 @@ import org.openqa.selenium.WebElement;
 public class MilestonesPage extends BasePage {
 
 
-    // локаторы навигации во вкладке milestone
+    // локаторы
     private String milestonesNameLocator = "//div/a[.='Replace']";
-
 
     private String deleteButtonLocator = "//div/div/a[@href and text()='Replace']/following::a[@class='deleteLink'][1]";
     private By okButtonLocator = By.xpath("//*[@id=\"deleteDialog\"]/div[3]/a[1]");
@@ -27,6 +25,8 @@ public class MilestonesPage extends BasePage {
         super(driver);
     }
 
+
+    //блок атомарных методов
     @Override
     protected By getPageIdentifier() {
         return successAddedLocator;
@@ -41,7 +41,6 @@ public class MilestonesPage extends BasePage {
         return waitService.waitForExists(By.xpath(milestonesNameLocator.replace("Replace", milestoneName)));
     }
 
-
     public WebElement getDeleteButton(String milestoneName) {
         return waitService.waitForExists(By.xpath(deleteButtonLocator.replace("Replace", milestoneName)));
     }
@@ -52,6 +51,25 @@ public class MilestonesPage extends BasePage {
 
     public WebElement getSuccessDeleteMilestone() {
         return waitService.waitForExists(successDeleteLocator);
+    }
+
+
+
+    // блок комплексных методов
+    public MilestoneReviewPage readMilestones(String milestoneName) {
+        getMilestoneName(milestoneName).click();
+        return new MilestoneReviewPage(driver);
+    }
+
+    public CreateAndEditMilestonePage addMilestones() {
+      getAddMilestones().click();
+      return new CreateAndEditMilestonePage(driver);
+    }
+
+    public MilestonesPage deleteMilestone(String milestoneName)  {
+        getDeleteButton(milestoneName).click();
+        getOkButton().click();
+        return this;
     }
 
 

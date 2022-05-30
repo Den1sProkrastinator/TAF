@@ -5,6 +5,9 @@ import configuration.ReadProperties;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.CreateAndEditMilestonePage;
+import pages.LoginPage;
+import pages.MilestonesPage;
 
 import static org.testng.TestRunner.PriorityWeight.dependsOnMethods;
 
@@ -13,55 +16,73 @@ public class MilestonesTests extends BaseTest {
 
     @Test(priority = 1)
     public void addMilestones() {
+
         loginAndOpenMilestoneMenu();
-        milestonesStep.addMilestones();
-        Assert.assertTrue(createAndEditMilestoneStep.createMilestones
-                ("Denis", "sss", "dasdsa", "5/10/2022", "5/15/2022").isPageOpened());
+
+        Assert.assertTrue(new MilestonesPage(driver)
+                .addMilestones()
+                .createMilestones("Denis", "reference"
+                        , "description", "6/10/2022"
+                        , "6/15/2022")
+                .isPageOpened());
     }
 
 
     @Test(priority = 2)
-    public void readMilestone() throws InterruptedException {
-        loginAndOpenMilestoneMenu();
-        Thread.sleep(2000);
-        Assert.assertTrue(milestonesStep.readMilestones("Denis").isPageOpened());
+    public void readMilestone() {
 
+        loginAndOpenMilestoneMenu();
+
+        Assert.assertTrue(new MilestonesPage(driver)
+                .readMilestones("Denis")
+                .isPageOpened());
     }
 
     @Test(priority = 3)
-    public void startMilestone() throws InterruptedException {
+    public void startMilestone() {
         loginAndOpenMilestoneMenu();
-        milestonesStep.readMilestones("Denis");
 
-        Assert.assertEquals(milestoneReviewStep.startMilestone()
-                .getSuccessAction().getText(), "Successfully started the milestone.");
+        Assert.assertEquals(
+                new MilestonesPage(driver)
+                        .readMilestones("Denis")
+                        .startMilestone()
+                        .getSuccessAction()
+                        .getText(), "Successfully started the milestone.");
     }
 
 
     @Test(priority = 4)
-    public void editMilestone() throws InterruptedException {
+    public void editMilestone() {
+
         loginAndOpenMilestoneMenu();
-        Thread.sleep(200);
-        milestonesStep.readMilestones("Denis");
-        Thread.sleep(200);
-        Assert.assertEquals(createAndEditMilestoneStep.editMilestone("Admin")
-                .getSuccessAction().getText(), "Successfully updated the milestone.");
+
+        Assert.assertEquals(
+                new MilestonesPage(driver)
+                        .readMilestones("Denis")
+                        .editMilestoneButtonClick()
+                        .editMilestone("Edit text")
+                        .getSuccessAction().getText(), "Successfully updated the milestone.");
     }
 
     @Test(priority = 5)
-    public void deleteMilestone()  {
+    public void deleteMilestone() {
+
         loginAndOpenMilestoneMenu();
 
-        Assert.assertEquals(milestonesStep.deleteMilestone("Denis")
-                .getSuccessDeleteMilestone().getText(), "Successfully deleted the milestone (s).");
+        Assert.assertEquals(
+                new MilestonesPage(driver)
+                        .deleteMilestone("Denis")
+                        .getSuccessDeleteMilestone()
+                        .getText(), "Successfully deleted the milestone (s).");
     }
 
     private void loginAndOpenMilestoneMenu() {
-        loginStep.successLogin(
-                ReadProperties.username(),
-                ReadProperties.password());
-        dashBoardStep.projectSelection("Denis_QA18_PO_HW");
-        projectsStep.menuNavigation("Milestones");
+
+        new LoginPage(driver)
+
+                .successLogin(ReadProperties.username(), ReadProperties.password())
+                .projectSelection("Denis_QA18_PO_HW")
+                .menuNavigation("Milestones");
 
     }
 

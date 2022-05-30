@@ -21,11 +21,7 @@ public class MilestoneReviewPage extends BasePage {
 
     private By editButtonLocator = By.xpath("//div/a[text()='Edit']");
 
-    private By successActionLocator = By.xpath(
-            "//div[@class='message message-success']");
-
-
-
+    private By successActionLocator = By.xpath("//div[@class='message message-success']");
 
 
 
@@ -33,6 +29,9 @@ public class MilestoneReviewPage extends BasePage {
     protected By getPageIdentifier() {
         return milestoneIsOpening;
     }
+
+
+
 
     //атомарные методы
 
@@ -51,6 +50,23 @@ public class MilestoneReviewPage extends BasePage {
 
     public WebElement getSuccessAction() {
         return waitService.waitForExists(successActionLocator);
+    }
+
+
+
+    //Блок комплексных методов
+
+    public MilestoneReviewPage startMilestone() {
+        getStartMilestone().click();
+        getStartMilestoneButton().click();
+        return this;
+    }
+
+    public CreateAndEditMilestonePage editMilestoneButtonClick() {
+
+        getEditButton().click();
+
+        return new CreateAndEditMilestonePage(driver);
     }
 
 

@@ -41,6 +41,12 @@ public class ProjectsPage extends BasePage {
     }
 
 
+    //Блок комплексных методов
+    public ProjectsPage menuNavigation(String menuName){
+        getMenuByName(menuName).click();
+        return  this;
+
+    }
 
 
 }

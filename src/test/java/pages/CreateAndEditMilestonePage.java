@@ -9,6 +9,7 @@ public class CreateAndEditMilestonePage extends BasePage {
     public CreateAndEditMilestonePage(WebDriver driver) {
         super(driver);
     }
+
     //локаторы
     private By nameLocator = By.id("name");
     private By referenceLocator = By.id("reference");
@@ -50,6 +51,28 @@ public class CreateAndEditMilestonePage extends BasePage {
 
     public WebElement getAddMilestoneButton() {
         return waitService.waitForExists(addMilestoneButtonLocator);
+    }
+
+    //Блок комплексных методов
+
+    public CreateAndEditMilestonePage createMilestones(String name, String reference, String description, String startDate, String endDate) {
+        getName().sendKeys(name);
+        getReference().sendKeys(reference);
+        getDescriptionDisplay().sendKeys(description);
+        getStartDate().sendKeys(startDate);
+        getEndDate().sendKeys(endDate);
+        getAddMilestoneButton().click();
+        return this;
+    }
+
+
+
+    public MilestoneReviewPage editMilestone(String editDescription)  {
+
+        getDescriptionDisplay().sendKeys(editDescription);
+       getAddMilestoneButton().click();
+
+        return  new MilestoneReviewPage(driver);
     }
 
 
