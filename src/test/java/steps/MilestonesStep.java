@@ -23,12 +23,10 @@ public class MilestonesStep extends BaseStep {
     }
 
 
-    public MilestonesPage.CheckDeleteMilestone deleteMilestone(String milestoneName)  {
-
+    public MilestonesPage deleteMilestone(String milestoneName)  {
         milestonesPage.getDeleteButton(milestoneName).click();
         milestonesPage.getOkButton().click();
-
-        return checkDeleteMilestone;
+        return milestonesPage;
     }
 
 

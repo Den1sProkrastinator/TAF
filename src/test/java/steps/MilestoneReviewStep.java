@@ -10,13 +10,12 @@ public class MilestoneReviewStep extends BaseStep {
         super(driver);
     }
 
-    public MilestoneReviewPage.CheckStartMilestone startMilestone()  {
-
+    public MilestoneReviewPage startMilestone()  {
         milestoneReviewPage.getStartMilestone().click();
 
         milestoneReviewPage.getStartMilestoneButton().click();
 
-        return checkStartMilestone;
+        return milestoneReviewPage;
     }
 
 

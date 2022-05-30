@@ -21,36 +21,39 @@ public class MilestonesTests extends BaseTest {
 
 
     @Test(priority = 2)
-    public void readMilestone()  {
+    public void readMilestone() throws InterruptedException {
         loginAndOpenMilestoneMenu();
-
+        Thread.sleep(2000);
         Assert.assertTrue(milestonesStep.readMilestones("Denis").isPageOpened());
 
     }
 
     @Test(priority = 3)
-    public void startMilestone()  {
+    public void startMilestone() throws InterruptedException {
         loginAndOpenMilestoneMenu();
         milestonesStep.readMilestones("Denis");
 
-     Assert.assertTrue(milestoneReviewStep.startMilestone().isPageOpened());
+        Assert.assertEquals(milestoneReviewStep.startMilestone()
+                .getSuccessAction().getText(), "Successfully started the milestone.");
     }
 
 
     @Test(priority = 4)
-    public void editMilestone()  {
+    public void editMilestone() throws InterruptedException {
         loginAndOpenMilestoneMenu();
-
+        Thread.sleep(200);
         milestonesStep.readMilestones("Denis");
-
-        Assert.assertTrue(createAndEditMilestoneStep.editMilestone("Admin").isPageOpened());
+        Thread.sleep(200);
+        Assert.assertEquals(createAndEditMilestoneStep.editMilestone("Admin")
+                .getSuccessAction().getText(), "Successfully updated the milestone.");
     }
 
     @Test(priority = 5)
     public void deleteMilestone()  {
         loginAndOpenMilestoneMenu();
 
-       Assert.assertTrue(milestonesStep.deleteMilestone("Denis").isPageOpened());
+        Assert.assertEquals(milestonesStep.deleteMilestone("Denis")
+                .getSuccessDeleteMilestone().getText(), "Successfully deleted the milestone (s).");
     }
 
     private void loginAndOpenMilestoneMenu() {

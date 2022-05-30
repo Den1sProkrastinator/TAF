@@ -13,15 +13,14 @@ public class MilestonesPage extends BasePage {
     private String milestonesNameLocator = "//div/a[.='Replace']";
 
 
-    private String deleteButtonLocator =
-            "//div/div/a[@href and text()='Replace']/following::a[@class='deleteLink'][1]";
+    private String deleteButtonLocator = "//div/div/a[@href and text()='Replace']/following::a[@class='deleteLink'][1]";
     private By okButtonLocator = By.xpath("//*[@id=\"deleteDialog\"]/div[3]/a[1]");
 
     private By successAddedLocator = By.xpath("//div[text()='Successfully added the new milestone.']");
 
     private By addMilestonesLocator = By.id("navigation-milestones-add");
 
-
+    private By successDeleteLocator = By.xpath("//div[@class='message message-success']");
 
 
     public MilestonesPage(WebDriver driver) {
@@ -32,9 +31,6 @@ public class MilestonesPage extends BasePage {
     protected By getPageIdentifier() {
         return successAddedLocator;
     }
-
-
-
 
 
     public WebElement getOkButton() {
@@ -54,19 +50,9 @@ public class MilestonesPage extends BasePage {
         return waitService.waitForExists(addMilestonesLocator);
     }
 
-
-
-    //классы для проверки
-    public static class CheckDeleteMilestone extends BasePage {
-        private By successDeleteLocator = By.xpath(
-                "//div[@class='message message-success']");
-        public CheckDeleteMilestone(WebDriver driver) {
-            super(driver);
-        }
-
-        @Override
-        protected By getPageIdentifier() {
-            return successDeleteLocator;
-        }
+    public WebElement getSuccessDeleteMilestone() {
+        return waitService.waitForExists(successDeleteLocator);
     }
+
+
 }

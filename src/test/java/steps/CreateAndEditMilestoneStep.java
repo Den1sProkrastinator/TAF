@@ -3,7 +3,7 @@ package steps;
 import baseEntities.BaseStep;
 import org.openqa.selenium.WebDriver;
 import pages.CreateAndEditMilestonePage;
-import pages.MilestoneReviewPage.CheckSuccessUpdate;
+
 import pages.MilestoneReviewPage;
 
 public class CreateAndEditMilestoneStep extends BaseStep {
@@ -20,12 +20,11 @@ public class CreateAndEditMilestoneStep extends BaseStep {
         return createAndEditMilestonePage;
     }
 
-    public MilestoneReviewPage.CheckSuccessUpdate editMilestone(String editDescription)  {
+    public MilestoneReviewPage editMilestone(String editDescription)  {
         milestoneReviewPage.getEditButton().click();
         createAndEditMilestonePage.getDescriptionDisplay().sendKeys(editDescription);
         createAndEditMilestonePage.getAddMilestoneButton().click();
-
-        return checkSuccessUpdate;
+        return milestoneReviewPage;
     }
 
 
