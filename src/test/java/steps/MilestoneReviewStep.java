@@ -3,6 +3,7 @@ package steps;
 import baseEntities.BaseStep;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pages.MilestoneReviewPage;
 
 public class MilestoneReviewStep extends BaseStep {
@@ -10,12 +11,17 @@ public class MilestoneReviewStep extends BaseStep {
         super(driver);
     }
 
-    public MilestoneReviewPage.CheckStartMilestone startMilestone() throws InterruptedException {
+    public MilestoneReviewPage startMilestone() throws InterruptedException {
         milestoneReviewPage.getStartMilestone().click();
         Thread.sleep(2000);
         milestoneReviewPage.getStartMilestoneButton().click();
         Thread.sleep(2000);
-        return checkStartMilestone;
+        return  milestoneReviewPage;
+    }
+
+    public WebElement getSuccessStartLocator(){
+
+        return  milestoneReviewPage.getSuccessStart();
     }
 
 

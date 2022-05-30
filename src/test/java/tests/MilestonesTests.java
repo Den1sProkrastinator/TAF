@@ -33,7 +33,8 @@ public class MilestonesTests extends BaseTest {
         loginAndOpenMilestoneMenu();
         milestonesStep.readMilestones("Denis");
 
-     Assert.assertTrue(milestoneReviewStep.startMilestone().isPageOpened());
+        Assert.assertEquals(milestoneReviewStep.startMilestone()
+                .getSuccessStart().getText(),"Successfully started the milestone.");
     }
 
 

@@ -17,7 +17,7 @@ public class BaseStep {
     protected MilestoneReviewPage milestoneReviewPage;
 
     //лассы для проверок
-    protected MilestoneReviewPage.CheckStartMilestone checkStartMilestone;
+
     protected MilestonesPage.CheckDeleteMilestone checkDeleteMilestone;
 
     protected MilestoneReviewPage.CheckSuccessUpdate checkSuccessUpdate;
@@ -33,7 +33,7 @@ public class BaseStep {
         milestonesPage = new MilestonesPage(driver);
         createAndEditMilestonePage = new CreateAndEditMilestonePage(driver);
         milestoneReviewPage = new MilestoneReviewPage(driver);
-        checkStartMilestone=new MilestoneReviewPage.CheckStartMilestone(driver);
+
         checkDeleteMilestone = new MilestonesPage.CheckDeleteMilestone(driver);
         checkSuccessUpdate=new MilestoneReviewPage.CheckSuccessUpdate(driver);
 
