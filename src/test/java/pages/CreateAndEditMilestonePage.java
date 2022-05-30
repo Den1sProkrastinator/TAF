@@ -31,8 +31,11 @@ public class CreateAndEditMilestonePage extends BasePage {
 
 
     //локатор проверки
-    @FindBy(xpath = "//div[@class='message message-success']") // and text()='Successfully added the new milestone.'
+    @FindBy(xpath = "//div[@class='message message-success']")
      public WebElement successStartMilestone;
+
+    @FindBy(xpath = "//div[@class='message message-success']") // and text()='Successfully updated the milestone.']
+    public WebElement successUpdate;
 
     public CreateAndEditMilestonePage(WebDriver driver) {
         super(driver);

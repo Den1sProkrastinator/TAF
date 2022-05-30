@@ -23,11 +23,8 @@ public class MilestoneReviewPage extends BasePage {
     @FindBy(xpath = "//div/a[text()='Edit']")
     public WebElement editButton;
 
-    @FindBy(xpath = "//div[@class='message message-success' and text()='Successfully started the milestone.']")
+    @FindBy(xpath = "//div[@class='message message-success']")
     public WebElement successStart;
-
-    @FindBy(xpath = "//div[@class='message message-success' and text()='Successfully updated the milestone.']")
-    public WebElement successUpdate;
 
 
     public MilestoneReviewPage(WebDriver driver) {

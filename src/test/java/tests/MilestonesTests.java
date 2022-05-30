@@ -2,17 +2,17 @@ package tests;
 
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
-import org.openqa.selenium.support.ui.Select;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static org.testng.TestRunner.PriorityWeight.dependsOnMethods;
+
 
 public class MilestonesTests extends BaseTest {
 
 
     @Test(priority = 1)
-    public void addMilestones() throws InterruptedException {
+    public void addMilestones()  {
         loginAndOpenMilestoneMenu();
         milestonesStep.addMilestones();
         Assert.assertEquals(createAndEditMilestoneStep.createMilestones
@@ -22,9 +22,9 @@ public class MilestonesTests extends BaseTest {
 
 
     @Test(priority = 2)
-    public void readMilestone() throws InterruptedException {
+    public void readMilestone() {
         loginAndOpenMilestoneMenu();
-        Thread.sleep(2000);
+
         Assert.assertTrue(milestonesStep.readMilestones("Denis").isPageOpened());
 
     }
@@ -33,26 +33,34 @@ public class MilestonesTests extends BaseTest {
     public void startMilestone() throws InterruptedException {
         loginAndOpenMilestoneMenu();
         milestonesStep.readMilestones("Denis");
-     Assert.assertTrue(milestoneReviewStep.startMilestone().isDisplayed());
+        Assert.assertEquals(milestoneReviewStep.startMilestone()
+                .successStart.getText(),"Successfully started the milestone.");
+
     }
 
 
-//    @Test(priority = 4)
-//    public void editMilestone() throws InterruptedException {
-//        loginAndOpenMilestoneMenu();
-//        Thread.sleep(200);
-//        milestonesStep.readMilestones("Denis");
-//        Thread.sleep(200);
-////        Assert.assertTrue(createAndEditMilestoneStep.editMilestone("Admin").isPageOpened());
-//    }
-//
-//    @Test(priority = 5)
-//    public void deleteMilestone() throws InterruptedException {
-//        loginAndOpenMilestoneMenu();
-//
-////       Assert.assertTrue(milestonesStep.deleteMilestone("Denis").isPageOpened());
-//    }
+    @Test(priority = 4)
+    public void editMilestone()  {
+        loginAndOpenMilestoneMenu();
 
+        milestonesStep.readMilestones("Denis");
+
+        Assert.assertEquals(createAndEditMilestoneStep.editMilestone("Admin")
+                .successUpdate.getText(),"Successfully updated the milestone.");
+    }
+
+    @Test(priority = 5)
+    public void deleteMilestone() throws InterruptedException {
+        loginAndOpenMilestoneMenu();
+
+
+       Assert.assertEquals(milestonesStep.deleteMilestone("Denis").successDelete.getText(),"Successfully deleted the milestone (s).");
+    }
+
+
+
+
+    //метод для логина
     private void loginAndOpenMilestoneMenu() {
         loginStep.successLogin(
                 ReadProperties.username(),

@@ -19,12 +19,12 @@ public class CreateAndEditMilestoneStep extends BaseStep {
         return createAndEditMilestonePage;
     }
 
-    public void editMilestone(String editDescription) throws InterruptedException {
+    public CreateAndEditMilestonePage editMilestone(String editDescription) {
         milestoneReviewPage.editButton.click();
         createAndEditMilestonePage.descriptionDisplay.sendKeys(editDescription);
         createAndEditMilestonePage.addMilestoneButton.click();
-        Thread.sleep(3000);
 
+    return createAndEditMilestonePage;
     }
 
 
