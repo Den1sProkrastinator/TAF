@@ -2,6 +2,7 @@ package tests;
 
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
+import models.Milestone;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -13,17 +14,23 @@ public class MilestonesTests extends BaseTest {
 
     @Test(priority = 1)
     public void addMilestones() {
+        Milestone milestone = new Milestone();
+        milestone.setName("Denis");
+        milestone.setReference("reference");
+        milestone.setDescription("description");
+        milestone.setStartDate("6/10/2022");
+        milestone.setEndDate("6/15/2022");
         loginAndOpenMilestoneMenu();
         milestonesStep.addMilestones();
         Assert.assertTrue(createAndEditMilestoneStep.createMilestones
-                ("Denis", "sss", "dasdsa", "5/10/2022", "5/15/2022").isPageOpened());
+                (milestone).isPageOpened());
     }
 
 
     @Test(priority = 2)
     public void readMilestone()  {
-        loginAndOpenMilestoneMenu();
 
+        loginAndOpenMilestoneMenu();
         Assert.assertTrue(milestonesStep.readMilestones("Denis").isPageOpened());
 
     }
