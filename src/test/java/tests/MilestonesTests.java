@@ -14,9 +14,9 @@ public class MilestonesTests extends BaseTest {
         MilestoneBuilder milestone = new MilestoneBuilder.Builder()
                 .withName("Denis")
                 .withReference("reference")
-                .withDescription("desctiption")
+                .withDescription("description")
                 .withStartDate("6/11/2022")
-                .withEndDate("/615/2022")
+                .withEndDate("6/15/2022")
                 .build();
 
         loginAndOpenMilestoneMenu();
