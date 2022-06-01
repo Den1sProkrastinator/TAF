@@ -1,7 +1,7 @@
 package steps;
 
 import baseEntities.BaseStep;
-import models.Milestone;
+import models.MilestoneBuilder;
 import org.openqa.selenium.WebDriver;
 import pages.CreateAndEditMilestonePage;
 
@@ -11,7 +11,7 @@ public class CreateAndEditMilestoneStep extends BaseStep {
     public CreateAndEditMilestoneStep(WebDriver driver) {
         super(driver);
     }
-    public CreateAndEditMilestonePage createMilestones(Milestone milestone) {
+    public CreateAndEditMilestonePage createMilestones(MilestoneBuilder milestone) {
         createAndEditMilestonePage.getName().sendKeys(milestone.getName());
         createAndEditMilestonePage.getReference().sendKeys(milestone.getReference());
         createAndEditMilestonePage.getDescriptionDisplay().sendKeys(milestone.getDescription());

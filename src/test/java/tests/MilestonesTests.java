@@ -2,24 +2,23 @@ package tests;
 
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
-import models.Milestone;
-import org.openqa.selenium.support.ui.Select;
+import models.MilestoneBuilder;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static org.testng.TestRunner.PriorityWeight.dependsOnMethods;
 
 public class MilestonesTests extends BaseTest {
 
 
     @Test(priority = 1)
     public void addMilestones() {
-        Milestone milestone = new Milestone();
-        milestone.setName("Denis");
-        milestone.setReference("reference");
-        milestone.setDescription("description");
-        milestone.setStartDate("6/10/2022");
-        milestone.setEndDate("6/15/2022");
+        MilestoneBuilder milestone = new MilestoneBuilder.Builder()
+                .withName("Denis")
+                .withReference("reference")
+                .withDescription("desctiption")
+                .withStartDate("6/11/2022")
+                .withEndDate("/615/2022")
+                .build();
+
         loginAndOpenMilestoneMenu();
         milestonesStep.addMilestones();
         Assert.assertTrue(createAndEditMilestoneStep.createMilestones
@@ -28,7 +27,7 @@ public class MilestonesTests extends BaseTest {
 
 
     @Test(priority = 2)
-    public void readMilestone()  {
+    public void readMilestone() {
 
         loginAndOpenMilestoneMenu();
         Assert.assertTrue(milestonesStep.readMilestones("Denis").isPageOpened());
@@ -36,7 +35,7 @@ public class MilestonesTests extends BaseTest {
     }
 
     @Test(priority = 3)
-    public void startMilestone()  {
+    public void startMilestone() {
         loginAndOpenMilestoneMenu();
         milestonesStep.readMilestones("Denis");
 
@@ -56,7 +55,7 @@ public class MilestonesTests extends BaseTest {
     }
 
     @Test(priority = 5)
-    public void deleteMilestone()  {
+    public void deleteMilestone() {
         loginAndOpenMilestoneMenu();
 
         Assert.assertEquals(milestonesStep.deleteMilestone("Denis")
