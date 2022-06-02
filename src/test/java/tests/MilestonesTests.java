@@ -2,9 +2,7 @@ package tests;
 
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
-import io.qameta.allure.Attachment;
-import io.qameta.allure.Description;
-import io.qameta.allure.Step;
+import io.qameta.allure.*;
 import models.MilestoneBuilder;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -15,6 +13,9 @@ import java.nio.file.Paths;
 
 public class MilestonesTests extends BaseTest {
 
+
+    @Epic("Milestone test")
+    @Feature("CRUD Milestone")
 
     @Step("Milestone name  - Denis ")
     @Test(priority = 1 , description = "Add new Milestone")
