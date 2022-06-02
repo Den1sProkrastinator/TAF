@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import pages.DashboardPage;
 import pages.LoginPage;
@@ -7,6 +8,8 @@ import baseEntities.BaseTest;
 import configuration.ReadProperties;
 import org.testng.annotations.Test;
 import steps.LoginStep;
+import sun.awt.windows.ThemeReader;
+import wrappers.RadioButton;
 
 public class LoginTest extends BaseTest {
 
@@ -37,4 +40,21 @@ public class LoginTest extends BaseTest {
                 "Неверное сообщение об ошибке");
 
     }
+
+
+    @Test
+    public void radioButtonTest() throws Exception {
+        loginStep.successLogin(
+                ReadProperties.username(),
+                ReadProperties.password()
+        );
+        Thread.sleep(2000);
+        driver.get("https://denisthebestqaintheworld.testrail.io/index.php?/admin/projects/add");
+        Thread.sleep(2000);
+        RadioButton suiteMode = new RadioButton(driver, By.name("suite_mode"));
+        suiteMode.select("2");
+
+        Thread.sleep(2000);
+    }
+
 }
