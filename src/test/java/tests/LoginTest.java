@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import steps.LoginStep;
 import sun.awt.windows.ThemeReader;
 import wrappers.RadioButton;
+import wrappers.Table;
 
 public class LoginTest extends BaseTest {
 
@@ -53,6 +54,20 @@ public class LoginTest extends BaseTest {
         Thread.sleep(2000);
         RadioButton suiteMode = new RadioButton(driver, By.name("suite_mode"));
         suiteMode.select("2");
+
+        Thread.sleep(2000);
+    }
+
+    @Test
+    public void tableTest() throws Exception {
+        loginStep.successLogin(
+                ReadProperties.username(),
+                ReadProperties.password()
+        );
+
+        driver.get("https://denisthebestqaintheworld.testrail.io/index.php?/admin/projects/overview");
+        Table table = new Table(driver,By.cssSelector("table.grid"));
+        System.out.println(table.getColumnIndex("Project"));
 
         Thread.sleep(2000);
     }
