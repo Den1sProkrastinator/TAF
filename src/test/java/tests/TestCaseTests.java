@@ -7,14 +7,14 @@ public class TestCaseTests extends BaseTest {
 
     @Test
     public void successfulTestCaseValidationTest() {
-        //Написать CRUD тесты на Milestones
-        // 1.создание Milestone +
-        // 2.чтение Milestone +
-        // 3.старт +
-        // 3.модификация Milestone +
-        // 4.удаление Milestone +
+/*        В рамках проекта AUF необходимо реализоваться обертки для следующих элементов:
+        1-CheckBox  +
+        2-DropDown  +
+        3-Table     -
 
 
 
+
+ */
     }
 }

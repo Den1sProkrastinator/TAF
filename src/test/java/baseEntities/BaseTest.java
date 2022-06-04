@@ -11,15 +11,10 @@ import services.BrowsersService;
 public class BaseTest {
     protected WebDriver driver;
 
-
-
-
-
     @BeforeMethod
     public void setup() {
 
         driver = new BrowsersService().getDriver();
-
 
 
         driver.get(ReadProperties.getUrl());
