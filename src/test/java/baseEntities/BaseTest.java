@@ -22,7 +22,7 @@ public class BaseTest {
     public WebDriver driver;
     protected LoginStep loginStep;
     protected NavigationStep navigationStep;
-    protected Project mainProjectFromFile;
+//    protected Project mainProjectFromFile;
 
     @BeforeMethod
     public void setup() {
@@ -32,11 +32,11 @@ public class BaseTest {
         driver.get(ReadProperties.getUrl());
     }
 
-    @BeforeTest
-    public void prepareData() throws IOException {
-        Reader reader = Files.newBufferedReader(Paths.get("projectResult.json"));
-        mainProjectFromFile = new Gson().fromJson(reader, Project.class);
-    }
+//    @BeforeTest
+//    public void prepareData() throws IOException {
+//        Reader reader = Files.newBufferedReader(Paths.get("projectResult.json"));
+//        mainProjectFromFile = new Gson().fromJson(reader, Project.class);
+//    }
 
 
     @AfterMethod
