@@ -9,8 +9,10 @@ import pages.MilestoneReviewPage;
 import wrappers.CheckBox;
 
 public class CheckBoxTest extends BaseTest {
+
+
     @Test
-    public void checkBoxTest() throws InterruptedException {
+    public void checkBoxTest() throws Exception {
 
         loginAndOpenMilestoneMenu();
         new MilestoneReviewPage(driver)
@@ -18,7 +20,27 @@ public class CheckBoxTest extends BaseTest {
 
         CheckBox  checkBox = new CheckBox(driver, By.id("show_announcement"));
 
-        checkBox.click();
+        checkBox.clickByIndex(0);
+        Thread.sleep(2000);
+
+        checkBox.clickByValue("1");
+        Thread.sleep(2000);
+
+
+    }
+
+
+ @Test
+    public void checkBoxTest1() throws Exception {
+
+       driver.get("http://the-internet.herokuapp.com/checkboxes");
+
+
+
+        CheckBox  checkBox = new CheckBox(driver, By.xpath("//input[@type='checkbox']"));
+
+        checkBox.clickByIndex(0);
+        Thread.sleep(2000);
 
 
 

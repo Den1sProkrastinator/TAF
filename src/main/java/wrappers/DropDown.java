@@ -15,10 +15,11 @@ public class DropDown {
 
         for (WebElement element : driver.findElements(by)) {
             uiElements.add(new UIElement(driver, element));
-        };
+        }
     }
 
-    public void select(String value) throws Exception {
+
+    public void selectByName(String value) throws Exception {
         for (UIElement uiElement: uiElements) {
             if (uiElement.getText().equals(value)) {
                 uiElement.click();
@@ -26,7 +27,13 @@ public class DropDown {
             }
         }
 
-        throw new Exception("Value was not found");
+        throw new Exception("DropDown element was not found");
+    }
+
+    public void selectByIndex(int index){
+        uiElements.get(index).click();
+
+
     }
 
 }

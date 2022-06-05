@@ -1,27 +1,25 @@
 package wrappers;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CheckBox {
-    ArrayList<UIElement> uiElements;
+public class RadioButton {
+    private List<UIElement> uiElements;
 
-
-    public CheckBox(WebDriver driver, By by) {
+    public RadioButton(WebDriver driver, By by) {
         uiElements = new ArrayList<>();
 
         for (WebElement element : driver.findElements(by)) {
             uiElements.add(new UIElement(driver, element));
-        }
-
+        };
     }
 
-
-    public void clickByValue(String value) throws Exception {
-
-        for (UIElement uiElement : uiElements) {
+    public void select(String value) throws Exception {
+        for (UIElement uiElement: uiElements) {
             if (uiElement.getAttribute("value").equals(value)) {
                 uiElement.click();
                 return;
@@ -30,20 +28,4 @@ public class CheckBox {
 
         throw new Exception("Value was not found");
     }
-
-
-    public void clickByIndex(int index)  {
-        uiElements.get(index).click();
-
-    }
-
-
 }
-
-
-
-
-
-
-
-

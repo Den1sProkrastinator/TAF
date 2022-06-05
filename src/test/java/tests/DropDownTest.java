@@ -9,6 +9,10 @@ import pages.LoginPage;
 import pages.MilestoneReviewPage;
 import wrappers.DropDown;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
 public class DropDownTest extends BaseTest {
 
 
@@ -18,16 +22,23 @@ public class DropDownTest extends BaseTest {
         new MilestoneReviewPage(driver)
                 .editMilestoneButtonClick();
 
+
         WebElement dropDownMenuElement= driver.findElement(By.id("navigation-menu")) ;
 
         dropDownMenuElement.click();
 
-
         DropDown dropDown= new DropDown(driver,By.className("dropdown-menu-link"));
 
-        dropDown.select("TestRail User Guide");
-        Thread.sleep(2000);
 
+
+        dropDown.selectByName("TestRail User Guide");
+
+
+        Thread.sleep(2000);
+        dropDownMenuElement.click();
+
+
+//        dropDown.selectByIndex(19);
 
 
 
