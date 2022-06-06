@@ -4,7 +4,9 @@ import com.codeborne.selenide.AssertionMode;
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
 import configuration.ReadProperties;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.openqa.selenium.By;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -27,7 +29,16 @@ public class SelenideTest {
 //        Configuration.assertionMode= AssertionMode.SOFT;  //rezim testirovanij
 //        Configuration.clickViaJs=true;
 //        Configuration.headless=true;   //браузер мод(включить выключить )
-      Configuration.reportsFolder= "target/screenshoots/";
+        Configuration.reportsFolder = "target/screenshoots/";
+
+
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+
+        // or for fine-tuning:
+//        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
+//                .screenshots(false)
+//                .savePageSource(true)
+//        );
     }
 
 
@@ -80,11 +91,10 @@ public class SelenideTest {
                 .get(2);
 
 
-
         sleep(2000);
         refresh();//обновляет страницу
         title();
-       executeJavaScript("");
+        executeJavaScript("");
     }
 
     @Test
@@ -95,11 +105,11 @@ public class SelenideTest {
         $("#button_primary").click();
 
         System.out.println($(byText("Denis_QA18_PO_HW")).innerText());
-        System.out.println( $(byText("Denis_QA18_PO_HW")).getText());
-        System.out.println( $(byText("Denis_QA18_PO_HW")).innerHtml());
-        System.out.println( $(byText("Denis_QA18_PO_HW")).data(""));
-        System.out.println( $(byText("Denis_QA18_PO_HW")).val());
-        System.out.println( $(byText("Denis_QA18_PO_HW")).getValue());
+        System.out.println($(byText("Denis_QA18_PO_HW")).getText());
+        System.out.println($(byText("Denis_QA18_PO_HW")).innerHtml());
+        System.out.println($(byText("Denis_QA18_PO_HW")).data(""));
+        System.out.println($(byText("Denis_QA18_PO_HW")).val());
+        System.out.println($(byText("Denis_QA18_PO_HW")).getValue());
 
 
         $(byText("Denis_QA18_PO_HW")).scrollTo();
@@ -110,11 +120,8 @@ public class SelenideTest {
         $(byText("Denis_QA18_PO_HW")).ancestor("div");
 
 
-
-
-
-
     }
+
     @Test
     public void simpleSelenideTest3() {
 
@@ -147,6 +154,8 @@ public class SelenideTest {
                 .shouldBe(empty)
                 .shouldBe(focused);
 
-
+        Condition clicable = and("can be clickebled", visible, enabled);
+        $$("#announcement")
+                .findBy(clicable).click();
     }
 }
