@@ -157,5 +157,13 @@ public class SelenideTest {
         Condition clicable = and("can be clickebled", visible, enabled);
         $$("#announcement")
                 .findBy(clicable).click();
+
+
+        $("#announcement")
+                .shouldHave(text("Expected text"))
+                .shouldHave(matchText("Expected"))
+                .should(exactText("Exact text"))
+                .shouldHave(textCaseSensitive("Expected result text"))
+                .shouldHave(exactTextCaseSensitive("Expected result text"));
     }
 }
