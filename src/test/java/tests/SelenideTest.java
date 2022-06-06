@@ -160,10 +160,10 @@ public class SelenideTest {
 
 
         $("#announcement")
-                .shouldHave(text("Expected text"))
-                .shouldHave(matchText("Expected"))
-                .should(exactText("Exact text"))
+                .shouldHave(text("Expected text")) //contains
+                .shouldHave(matchText("Expected")) //регулярные выражения
+                .should(exactText("Exact text"))//equlsIgnoreCase
                 .shouldHave(textCaseSensitive("Expected result text"))
-                .shouldHave(exactTextCaseSensitive("Expected result text"));
+                .shouldHave(exactTextCaseSensitive("Expected result text"));//equls
     }
 }
