@@ -12,18 +12,18 @@ public class CreateAndEditMilestoneStep extends BaseStep {
         super(driver);
     }
     public CreateAndEditMilestonePage createMilestones(MilestoneBuilder milestone) {
-        createAndEditMilestonePage.getName().sendKeys();
-        createAndEditMilestonePage.getReference().sendKeys();
-        createAndEditMilestonePage.getDescriptionDisplay().sendKeys();
-        createAndEditMilestonePage.getStartDate().sendKeys();
-        createAndEditMilestonePage.getEndDate().sendKeys();
+        createAndEditMilestonePage.getName().sendKeys(milestone.getName());
+        createAndEditMilestonePage.getReference().sendKeys(milestone.getReference());
+        createAndEditMilestonePage.getDescriptionDisplay().sendKeys(milestone.getDescription());
+        createAndEditMilestonePage.getStartDate().sendKeys(milestone.getStartDate());
+        createAndEditMilestonePage.getEndDate().sendKeys(milestone.getEndDate());
         createAndEditMilestonePage.getAddMilestoneButton().click();
         return createAndEditMilestonePage;
     }
 
-    public MilestoneReviewPage editMilestone(String editDescription)  {
+    public MilestoneReviewPage editMilestone(MilestoneBuilder milestone)  {
         milestoneReviewPage.getEditButton().click();
-        createAndEditMilestonePage.getDescriptionDisplay().sendKeys(editDescription);
+        createAndEditMilestonePage.getDescriptionDisplay().sendKeys(milestone.getDescription());
         createAndEditMilestonePage.getAddMilestoneButton().click();
         return milestoneReviewPage;
     }

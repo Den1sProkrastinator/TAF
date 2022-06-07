@@ -31,16 +31,24 @@ public class MilestonesTests extends BaseTest {
 
     @Test(priority = 2)
     public void readMilestone() {
+        MilestoneBuilder milestone = MilestoneBuilder.builder()
+                .milestoneName("Denis")
+                .build();
+
         loginAndOpenMilestoneMenu();
 
-        Assert.assertTrue(milestonesStep.readMilestones("Denis").isPageOpened());
+        Assert.assertTrue(milestonesStep.readMilestones(milestone).isPageOpened());
 
     }
 
     @Test(priority = 3)
     public void startMilestone() {
+        MilestoneBuilder milestone = MilestoneBuilder.builder()
+                .milestoneName("Denis")
+                .build();
+
         loginAndOpenMilestoneMenu();
-        milestonesStep.readMilestones("Denis");
+        milestonesStep.readMilestones(milestone);
 
         Assert.assertEquals(milestoneReviewStep.startMilestone()
                 .getSuccessAction().getText(), "Successfully started the milestone.");
@@ -49,19 +57,27 @@ public class MilestonesTests extends BaseTest {
 
     @Test(priority = 4)
     public void editMilestone() {
+
+        MilestoneBuilder milestone = MilestoneBuilder.builder()
+                .description("Description")
+                .milestoneName("Denis")
+                .build();
         loginAndOpenMilestoneMenu();
 
-        milestonesStep.readMilestones("Denis");
+        milestonesStep.readMilestones(milestone);
 
-        Assert.assertEquals(createAndEditMilestoneStep.editMilestone("Admin")
+        Assert.assertEquals(createAndEditMilestoneStep.editMilestone(milestone)
                 .getSuccessAction().getText(), "Successfully updated the milestone.");
     }
 
     @Test(priority = 5)
     public void deleteMilestone() {
+        MilestoneBuilder milestone = MilestoneBuilder.builder()
+                .milestoneName("Denis")
+                .build();
         loginAndOpenMilestoneMenu();
 
-        Assert.assertEquals(milestonesStep.deleteMilestone("Denis")
+        Assert.assertEquals(milestonesStep.deleteMilestone(milestone)
                 .getSuccessDeleteMilestone().getText(), "Successfully deleted the milestone (s).");
     }
 

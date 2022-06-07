@@ -1,6 +1,7 @@
 package steps;
 
 import baseEntities.BaseStep;
+import models.MilestoneBuilder;
 import org.openqa.selenium.WebDriver;
 import pages.MilestoneReviewPage;
 import pages.MilestonesPage;
@@ -16,15 +17,15 @@ public class MilestonesStep extends BaseStep {
 
     }
 
-    public MilestoneReviewPage readMilestones(String milestoneName) {
-        milestonesPage.getMilestoneName(milestoneName).click();
+    public MilestoneReviewPage readMilestones(MilestoneBuilder milestone) {
+        milestonesPage.getMilestoneName(milestone.getMilestoneName()).click();
         return milestoneReviewPage;
 
     }
 
 
-    public MilestonesPage deleteMilestone(String milestoneName)  {
-        milestonesPage.getDeleteButton(milestoneName).click();
+    public MilestonesPage deleteMilestone(MilestoneBuilder milestone)  {
+        milestonesPage.getDeleteButton(milestone.getMilestoneName()).click();
         milestonesPage.getOkButton().click();
         return milestonesPage;
     }
