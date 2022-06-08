@@ -11,12 +11,8 @@ public class LoginPage {
     public SelenideElement email = $("[type='text']");
 
     public SelenideElement  psw =$("[type='password']");
-
-
-
     public SelenideElement button= $(".button.is-vcentered");
 
-
-
+    public SelenideElement alertText=$(".notification.is-danger");
 
 }
