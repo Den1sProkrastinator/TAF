@@ -25,36 +25,31 @@ public class LoginTest {
 
     }
 
-    @Test
-    public void correctLogin() {
-        open(ReadProperties.getUrl());
-        LoginPage loginPage=new LoginPage();
-        FeedPage feedPage = new FeedPage();
-        loginPage.email.setValue(ReadProperties.email());
-        loginPage.psw.setValue(ReadProperties.password());
-        loginPage.button.click();
-        feedPage.navigationMenu.shouldBe(exist);
+    @Test(description = "success login")
+    public void successLogin() {
+
+      new LoginPage().successLogin(ReadProperties.email(),ReadProperties.password())
+              .getNavigationMenu()
+              .shouldBe(exist);
 
 
     }
 
-    @Test
+    @Test(description = "enter incorrect emil")
     public  void inCorrectEmail(){
-        open(ReadProperties.getUrl());
-        LoginPage loginPage=new LoginPage();
-        loginPage.email.setValue("incorrectEmail@gmail.com");
-        loginPage.psw.setValue(ReadProperties.password());
-        loginPage.button.click();
-        loginPage.alertText.shouldHave(text("Your email or password is wrong"));
+
+        new LoginPage().inCorrectLogin("ssssss",ReadProperties.password())
+                .getIncorrectEmail()
+                .shouldHave(text("Invalid email address"));
     }
 
-    @Test
+    @Test(description = "enter incorrect password")
     public  void inCorrectPSW(){
-        open(ReadProperties.getUrl());
-        LoginPage loginPage=new LoginPage();
-        loginPage.email.setValue(ReadProperties.email());
-        loginPage.psw.setValue("123456");
-        loginPage.button.click();
-        loginPage.alertText.shouldHave(text("Your email or password is wrong"));
+
+        new LoginPage().inCorrectLogin(ReadProperties.email(),"ssssss")
+                .getIncorrectPSW()
+                .shouldHave(text("Your email or password is wrong"));
     }
+
+
 }

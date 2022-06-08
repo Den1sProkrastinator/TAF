@@ -6,5 +6,16 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class FeedPage {
 
-    public SelenideElement navigationMenu = $("#navMenu");
+    //locators
+    private SelenideElement navigationMenu = $("#navMenu");
+
+
+    //corpuscular methods
+    public SelenideElement getNavigationMenu() {
+        return navigationMenu;
+    }
+
+
+    //complex methods
+
 }

@@ -2,25 +2,27 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import configuration.ReadProperties;
-import org.openqa.selenium.By;
-import tests.SelenideTest;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 public class LoginPage {
 
 
-
     //locators
-    public SelenideElement email = $("[type='text']");
+    private SelenideElement email = $("[type='text']");
 
-    public SelenideElement  psw =$("[type='password']");
-    public SelenideElement button= $(".button.is-vcentered");
+    private SelenideElement psw = $("[type='password']");
+    private SelenideElement button = $(".button.is-vcentered");
 
-    public SelenideElement alertText=$(".notification.is-danger");
+    private SelenideElement incorrectEmail=$(".notification.is-danger.is-small");
+
+    private SelenideElement incorrectPSW=$(".notification.is-danger");
 
 
-    //corpuscular methods
+
+
+//corpuscular methods
 
     public SelenideElement getEmail() {
         return email;
@@ -34,13 +36,39 @@ public class LoginPage {
         return button;
     }
 
-    public SelenideElement getAlertText() {
-        return alertText;
+
+
+
+
+
+    //complex methods
+    public FeedPage successLogin(String email, String psw) {
+      login(email, psw);
+        return new FeedPage();
     }
 
-    public LoginPage successLogin(){
-
+    public SelenideElement getIncorrectEmail() {
+        return incorrectEmail;
     }
 
+    public SelenideElement getIncorrectPSW() {
+        return incorrectPSW;
+    }
+
+    public LoginPage inCorrectLogin(String inCorrectEmail, String psw){
+        login(inCorrectEmail,psw);
+        return this;
+    }
+
+
+
+
+
+    public void login(String email, String psw){
+        open(ReadProperties.getUrl());
+        getEmail().setValue(email);
+        getPsw().setValue(psw);
+        button.click();
+    }
 
 }
