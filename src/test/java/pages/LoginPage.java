@@ -8,13 +8,13 @@ import tests.SelenideTest;
 import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage {
-    public SelenideElement userName = $(By.id("name"));
+    public SelenideElement email = $("[type='text']");
 
-    public SelenideElement  psw =$("#password");
+    public SelenideElement  psw =$("[type='password']");
 
 
 
-    public SelenideElement button= $("#button_primary");
+    public SelenideElement button= $(".button.is-vcentered");
 
 
 

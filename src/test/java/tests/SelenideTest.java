@@ -45,7 +45,7 @@ public class SelenideTest {
     @Test
     public void simpleSelenideTest() {
         open(ReadProperties.getUrl());
-        $(By.id("name")).setValue(ReadProperties.username());
+        $(By.id("name")).setValue(ReadProperties.email());
         $("#password").setValue(ReadProperties.password());
         $("#button_primary").click();
 
@@ -60,7 +60,7 @@ public class SelenideTest {
         open(ReadProperties.getUrl());
 
         LoginPage loginPage = new LoginPage();
-        loginPage.userName.setValue(ReadProperties.username());
+//        loginPage.userName.setValue(ReadProperties.username());
         loginPage.psw.setValue(ReadProperties.password());
         loginPage.button.click();
 
@@ -72,7 +72,7 @@ public class SelenideTest {
     @Test
     public void simpleSelenideTest1() {
         open("/");
-        $(By.id("name")).setValue(ReadProperties.username());
+        $(By.id("name")).setValue(ReadProperties.email());
         $("#password").setValue(ReadProperties.password());
         $("#button_primary").click();
         $(".page_title").shouldBe(visible).shouldHave(text("All Projects"));
@@ -100,7 +100,7 @@ public class SelenideTest {
     @Test
     public void simpleSelenideTest2() {
         open(ReadProperties.getUrl());
-        $(By.id("name")).setValue(ReadProperties.username());
+        $(By.id("name")).setValue(ReadProperties.email());
         $("#password").setValue(ReadProperties.password());
         $("#button_primary").click();
 
@@ -128,7 +128,7 @@ public class SelenideTest {
         open("/");
 
 
-        $(By.id("name")).setValue(ReadProperties.username());
+        $(By.id("name")).setValue(ReadProperties.email());
         $("#password").setValue(ReadProperties.password());
         $("#button_primary").click();
         open("/index.php?/admin/projects/overview");

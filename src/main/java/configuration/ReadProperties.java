@@ -25,8 +25,8 @@ public class ReadProperties {
         return properties.getProperty("browser");
     }
 
-    public static String username() {
-        return properties.getProperty("username");
+    public static String email() {
+        return properties.getProperty("email");
     }
 
     public static String password() {
