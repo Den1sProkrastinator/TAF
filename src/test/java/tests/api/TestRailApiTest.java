@@ -1,7 +1,6 @@
 package tests.api;
 
 
-import configuration.Endpoints;
 import configuration.ReadProperties;
 import io.restassured.http.ContentType;
 import io.restassured.http.Method;
@@ -91,6 +90,30 @@ public class TestRailApiTest extends BaseApitTest {
                 .then()
                 .log().body()
                 .statusCode(HttpStatus.SC_OK);
+    }
+
+    @Test
+    public void addProject3() {
+        Project project = Project.builder()
+                .name("WP_Test_03")
+                .typeOfProject(ProjectType.MULTIPLE_SUITE_MODE)
+                .build();
+
+        Map<String, Object> jsonAsMap = new HashMap<>();
+        jsonAsMap.put("name", project.getName());
+        jsonAsMap.put("suite_mode", project.getTypeOfProject());
+
+        Project newProject = given()
+                .body(jsonAsMap)
+                .when()
+                .post(Endpoints.ADD_PROJECT)
+                .then()
+                .log().body()
+                .statusCode(HttpStatus.SC_OK)
+                .extract()
+                .as(Project.class);
+
+        System.out.println(newProject.toString());
     }
 
 
