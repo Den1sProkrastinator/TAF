@@ -13,19 +13,19 @@ import wrappers.Table;
 public class TableTest extends BaseTest {
 
 
-//    @Test
-//    public void tableTest() throws Exception {
-//        loginAndOpenMilestoneMenu();
-//
-//         driver.get("https://denisthebestqaintheworld.testrail.io/index.php?/admin/projects/overview");
-//
-//
-//        Table table = new Table(driver,By.className("grid"));
-//
-//       table.getRow("AUF");
+    @Test
+    public void tableTest() throws Exception {
+        loginAndOpenMilestoneMenu();
+
+         driver.get("https://denisthebestqaintheworld.testrail.io/index.php?/admin/projects/overview");
+
+
+        Table table = new Table(driver,By.className("grid"));
+
+       table.getRow("AUF");
 //       table.getCellByText("AUF","icon-small-delete").click();
-//       Thread.sleep(2000);
-   // }
+       Thread.sleep(2000);
+    }
 
     private void loginAndOpenMilestoneMenu() {
 

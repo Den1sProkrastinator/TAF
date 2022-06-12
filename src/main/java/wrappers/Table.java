@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Table {
     private UIElement uiElement;
@@ -69,31 +70,9 @@ public class Table {
     }
 
 
-//    public ArrayList<UIElement> getCellByText(String rowName, String classValue)   {
-//
-//        ArrayList<UIElement> result = new ArrayList<>();
-//
-//        ArrayList<UIElement> listTR = uiElement.findUIElements(By.tagName("tr"));
-//        int index= 0;
-//        for (UIElement uiElement:listTR) {
-//            result.add(index, createTable(listTR.get(index)));
-//
-//        }
-//        return result;
-//
-//
-//    }
-//    private UIElement createTable (UIElement tr) {
-//        By by = By.className("action");
-//        ArrayList<WebElement> tds = tr.findElements(by);
-//        TableColumnClass result = new TableColumnClass();
-//
-//        тут вы присваиваете конкретные ячейки таблицы
-//        result.setName(tds.get(0));
-//        result.setEmail(tds.get(1));
-//        return result
-//
-//    }
+
+
+
 
 
 
