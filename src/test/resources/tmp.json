@@ -1,3 +1,19 @@
+
+
 {
-  "name": "WP_Test_01"
+  "id": 1,
+  "name": "Denis_QA18_PO_HW",
+  "announcement": null,
+  "show_announcement": false,
+  "is_completed": false,
+  "completed_on": null,
+  "suite_mode": 1,
+  "default_role_id": null,
+  "url": "https://denisthebestqaintheworld.testrail.io/index.php?/projects/overview/1",
+  "users": [
+
+  ],
+  "groups": [
+
+  ]
 }
