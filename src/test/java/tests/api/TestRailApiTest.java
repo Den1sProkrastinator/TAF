@@ -180,5 +180,25 @@ public class TestRailApiTest extends BaseApitTest {
        Assert.assertEquals(actualProject.getName(),"Denis_QA18_PO_HW");
     }
 
+    @Test
+    public void  updateProjectTest(){
+        given()
+                .pathParams("project_id",1)
+                .get(Endpoints.UPDATE_PROJECT);
+
+    }
+
+    @Test
+    public void deleteProjectTest(){
+
+        given()
+                .when()
+                .pathParams("project_id",1)
+                .delete(Endpoints.DELETE_PROJECT)
+                .then()
+                .statusCode(HttpStatus.SC_OK)
+                .log().body();
+    }
+
 
 }
