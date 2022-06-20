@@ -7,6 +7,7 @@ import lombok.Data;
 @Data
 @Builder
 public class Project {
+
         private String name;
         private String announcement;
         private boolean isShowAnnouncement;
@@ -15,4 +16,5 @@ public class Project {
         @SerializedName(value = "is_completed")
         private boolean isCompleted;
         private User user;
+
 }

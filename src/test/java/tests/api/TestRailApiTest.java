@@ -1,30 +1,21 @@
 package tests.api;
 
 
-import com.google.gson.Gson;
 import configuration.Endpoints;
-import configuration.ReadProperties;
-import io.restassured.http.ContentType;
-import io.restassured.http.Method;
-import io.restassured.path.json.JsonPath;
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
+import io.qameta.allure.internal.shadowed.jackson.annotation.JsonTypeInfo;
 import models.Project;
 import models.ProjectType;
 import org.apache.http.HttpStatus;
-import org.apache.http.protocol.HTTP;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
-public class TestRailApiTest extends BaseApitTest {
+public class TestRailApiTest extends BaseAPITest {
 
 
     @Test
@@ -49,6 +40,7 @@ public class TestRailApiTest extends BaseApitTest {
                 .as(Project.class);
 
         System.out.println(newProject.toString());
+
     }
     @Test
     public void  updateProjectTest(){

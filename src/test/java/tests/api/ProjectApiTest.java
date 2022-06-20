@@ -1,12 +1,11 @@
 package tests.api;
 
-import helpers.ProjectHelper;
 import models.Project;
 import org.apache.http.HttpStatus;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ProjectApiTest extends BaseApitTest {
+public class ProjectApiTest extends BaseAPITest {
 
     @Test
     public void positiveTest() {
