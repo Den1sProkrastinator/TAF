@@ -23,10 +23,10 @@ public class BaseApitTest {
                 .auth().preemptive().basic(ReadProperties.username(),ReadProperties.password());
 
 
-        expectedProject = Project.builder()
-                .name("WP_Test_03")
-                .typeOfProject(ProjectType.MULTIPLE_SUITE_MODE)
-                .build();
+//        expectedProject = Project.builder()
+//                .name("АБЫРВАЛГ")
+//                .typeOfProject(ProjectType.MULTIPLE_SUITE_MODE)
+//                .build();
 
         projectHelper = new ProjectHelper();
     }
