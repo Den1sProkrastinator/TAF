@@ -8,23 +8,28 @@ import models.ProjectType;
 import org.apache.http.HttpStatus;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
 
 public class MilestoneAPITest extends BaseAPITest {
 
-    private int milestoneID=101;
-    private int projectID=72;
+    private int milestoneID = 101;
+    private int projectID;
 
+    private List<Project> project = new ArrayList<>();
+
+    private Project actualProject;
 
 
     @Test
-    public void getMilestoneTest(){
+    public void getMilestoneTest() {
         given()
                 .when()
-                .pathParams("milestone_id",milestoneID)
+                .pathParams("milestone_id", milestoneID)
                 .get(Endpoints.GET_MILESTONE)
                 .then()
                 .log().body()
@@ -33,10 +38,10 @@ public class MilestoneAPITest extends BaseAPITest {
     }
 
     @Test
-    public void getMilestonesTest(){
+    public void getMilestonesTest() {
         given()
                 .when()
-                .pathParams("project_id",projectID)
+                .pathParams("project_id", projectID)
                 .get(Endpoints.GET_MILESTONES)
                 .then()
                 .log().body()
@@ -44,7 +49,7 @@ public class MilestoneAPITest extends BaseAPITest {
     }
 
     @Test
-    public void addMilestoneTest(){
+    public void addMilestoneTest() {
         Milestone milestone = Milestone.builder()
                 .name("NewMilestone")
                 .build();
@@ -54,7 +59,7 @@ public class MilestoneAPITest extends BaseAPITest {
         given()
                 .body(jsonAsMap)
                 .when()
-                .pathParams("project_id",projectID)
+                .pathParams("project_id", projectID)
                 .post(Endpoints.ADD_MILESTONES)
                 .then()
                 .log().body()
@@ -64,7 +69,7 @@ public class MilestoneAPITest extends BaseAPITest {
     }
 
     @Test
-    public void updateMilestoneTest(){
+    public void updateMilestoneTest() {
 
         Milestone milestone = Milestone.builder()
                 .parentId(103)
@@ -76,7 +81,7 @@ public class MilestoneAPITest extends BaseAPITest {
         given()
                 .body(jsonAsMap)
                 .when()
-                .pathParams("milestone_id",milestoneID)
+                .pathParams("milestone_id", milestoneID)
                 .post(Endpoints.UPDATE_MILESTONE)
                 .then()
                 .log().body()
@@ -85,13 +90,28 @@ public class MilestoneAPITest extends BaseAPITest {
 
 
     @Test
-    public void deleteMilestoneTest(){
+    public void deleteMilestoneTest() {
         given()
                 .when()
-                .pathParams("milestone_id",milestoneID)
+                .pathParams("milestone_id", milestoneID)
                 .delete(Endpoints.DELETE_MILESTONE)
                 .then()
                 .statusCode(HttpStatus.SC_OK)
                 .log().body();
     }
+
+    @Test
+    public void test() {
+
+        project.add(projectHelper.addProject("Должно работать"));
+
+        actualProject=project.get(0);
+
+
+       projectID= projectHelper.getProjectID(actualProject);
+        System.out.println(projectID);
+
+
+    }
 }
+

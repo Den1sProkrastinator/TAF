@@ -1,6 +1,7 @@
 package tests.api;
 
 import configuration.ReadProperties;
+import helpers.MilestoneHelper;
 import helpers.ProjectHelper;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -12,6 +13,7 @@ import static io.restassured.RestAssured.given;
 public class BaseAPITest {
 
     public ProjectHelper projectHelper ;
+    public MilestoneHelper milestoneHelper;
 
     @BeforeTest
     public void setupEnv(){
@@ -21,5 +23,6 @@ public class BaseAPITest {
                 .auth().preemptive().basic(ReadProperties.username(),ReadProperties.password());
 //                .pathParams("project_id",72);
         projectHelper = new ProjectHelper();
+        milestoneHelper = new MilestoneHelper();
     }
 }
