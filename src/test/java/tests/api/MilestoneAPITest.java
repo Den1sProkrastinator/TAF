@@ -51,7 +51,7 @@ public class MilestoneAPITest extends BaseAPITest {
         Map<String, Object> jsonAsMap = new HashMap<>();
         jsonAsMap.put("name", milestone.getName());
 
-        Milestone newMilestone = (Milestone) given()
+        given()
                 .body(jsonAsMap)
                 .when()
                 .pathParams("project_id",projectID)
