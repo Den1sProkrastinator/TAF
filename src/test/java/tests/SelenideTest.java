@@ -54,7 +54,7 @@ public class SelenideTest {
         loginPage.psw.setValue(ReadProperties.password());
         loginPage.button.click();
 
-        $(".page_title").shouldBe(visible).shouldHave(text("All project1"));
+        $(".page_title").shouldBe(visible).shouldHave(text("All projects"));
 
     }
 
