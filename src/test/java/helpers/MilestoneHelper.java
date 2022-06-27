@@ -1,6 +1,7 @@
 package helpers;
 
 import configuration.Endpoints;
+import io.restassured.response.Response;
 import models.Milestone;
 import models.Project;
 import models.ProjectType;
@@ -35,24 +36,33 @@ public class MilestoneHelper {
                 .as(Milestone.class);
     }
 
-    public void addMilestone(int projectID,Map jsonMap) {
+    public void addMilestone(int projectID, Map jsonMap) {
 
-         given()
+        given()
                 .pathParams("project_id", projectID)
-                 .body(jsonMap)
+                .body(jsonMap)
                 .post(Endpoints.ADD_MILESTONES)
                 .then()
                 .assertThat()
                 .statusCode(HttpStatus.SC_OK)
-                 .log().body()
+                .log().body()
                 .extract()
                 .as(Milestone.class);
     }
 
-    public void  updateMilestone(){
+    public void updateMilestone(int milestoneID, Map jsonAsMap) {
+
+        given()
+                .body(jsonAsMap)
+                .when()
+                .pathParams("milestone_id", milestoneID)
+                .post(Endpoints.UPDATE_MILESTONE)
+                .then()
+                .log().body()
+                .statusCode(HttpStatus.SC_OK);
     }
 
-    public void deleteMilestone(int milestoneID){
+    public void deleteMilestone(int milestoneID) {
 
         given()
                 .pathParams("milestone_id", milestoneID)
@@ -64,5 +74,12 @@ public class MilestoneHelper {
 
     }
 
+    public Response getMilestoneResponse(int milestoneID) {
 
+        return given()
+                .pathParams("milestone_id", milestoneID)
+                .get(Endpoints.GET_PROJECT);
+
+
+    }
 }
