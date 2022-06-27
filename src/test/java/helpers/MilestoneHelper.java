@@ -65,8 +65,9 @@ public class MilestoneHelper {
     public void deleteMilestone(int milestoneID) {
 
         given()
+                .when()
                 .pathParams("milestone_id", milestoneID)
-                .delete(Endpoints.DELETE_MILESTONE)
+                .post(Endpoints.DELETE_MILESTONE)
                 .then()
                 .assertThat()
                 .statusCode(HttpStatus.SC_OK);

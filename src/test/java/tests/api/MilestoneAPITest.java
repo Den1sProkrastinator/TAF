@@ -71,7 +71,7 @@ public class MilestoneAPITest extends BaseAPITest {
         given()
                 .when()
                 .pathParams("milestone_id",256)
-                .delete(Endpoints.DELETE_MILESTONE)
+                .post(Endpoints.DELETE_MILESTONE)
                 .then()
                 .statusCode(HttpStatus.SC_OK)
                 .log().body();
