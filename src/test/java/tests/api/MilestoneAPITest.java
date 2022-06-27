@@ -103,7 +103,8 @@ public class MilestoneAPITest extends BaseAPITest {
     @Test
     public void test() {
 
-        project.add(projectHelper.addProject("Должно работать"));
+
+        project.add(projectHelper.addProject();
 
         actualProject=project.get(0);
 

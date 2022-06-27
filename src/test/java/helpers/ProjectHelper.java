@@ -6,6 +6,7 @@ import io.restassured.response.Response;
 import models.Project;
 import models.ProjectType;
 import org.apache.http.HttpStatus;
+import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,20 +47,12 @@ public class ProjectHelper {
         return null;
     }
 
-    public Project addProject(String projectName){
+    public Project addProject(Map jsonMap){
 
-         Project project = Project.builder()
-                .name(projectName)
-                .typeOfProject(ProjectType.MULTIPLE_SUITE_MODE)
-                .build();
-
-        Map<String, Object> jsonAsMap = new HashMap<>();
-        jsonAsMap.put("name", project.getName());
-        jsonAsMap.put("suite_mode", project.getTypeOfProject());
 
 
      return   given()
-                .body(jsonAsMap)
+                .body(jsonMap)
                 .when()
                 .post(Endpoints.ADD_PROJECT)
                 .then()
@@ -83,4 +76,28 @@ public class ProjectHelper {
         return  id;
 
     }
+
+    @Test
+    public void  updateProject(){
+
+        Project updateProjectByName = Project.builder()
+                .name("АБЫРВАЛГ_Reborn")
+                .build();
+
+        Map<String, Object> jsonAsMap = new HashMap<>();
+        jsonAsMap.put("name", updateProjectByName.getName());
+
+        given()
+                .body(jsonAsMap)
+                .when()
+                .pathParams("project_id",72)
+                .post(Endpoints.UPDATE_PROJECT)
+                .then()
+                .log().body()
+                .statusCode(HttpStatus.SC_OK)
+                .extract()
+                .as(Project.class);
+
+    }
+
 }
