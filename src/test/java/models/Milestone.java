@@ -9,6 +9,7 @@ import lombok.Getter;
 @Builder
 @Getter
 public class Milestone {
+    private int id;
     private String name;
     private String description;
     @SerializedName(value = "due_on")
