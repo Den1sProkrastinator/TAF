@@ -1,6 +1,6 @@
 Feature: Параметризированный тест
 
-  Scenario: ростая параметризация
+  Scenario: Простая параметризация
     Given open browser
     * login page is opened
     When user with email "atrostyanko@gmail.com" and psw "Americana#1" logged in
