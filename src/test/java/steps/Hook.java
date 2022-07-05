@@ -1,33 +1,33 @@
 package steps;
 
-import baseEntities.BaseCucumberTEst;
+import baseEntities.BaseCucumberTest;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import services.BrowsersService;
 
-public class Hook extends BaseCucumberTEst {
-    private BaseCucumberTEst baseCucumberTEst;
+public class Hook extends BaseCucumberTest {
+    private BaseCucumberTest baseCucumberTest;
 
-    public Hook(BaseCucumberTEst baseCucumberTEst) {
-        this.baseCucumberTEst = baseCucumberTEst;
+    public Hook(BaseCucumberTest baseCucumberTest) {
+        this.baseCucumberTest = baseCucumberTest;
     }
 
     @Before
-    public void initializeTest(Scenario scenario){
-        System.out.println("Hook :Start browser");
+    public void initializeTest(Scenario scenario) {
+        System.out.println("HOOK: Start browser...");
 
-        baseCucumberTEst.driver = new BrowsersService().getDriver();
-
+        baseCucumberTest.driver = new BrowsersService().getDriver();
     }
-    @After
-    public void  tearDown(Scenario scenario){
-        if (scenario.isFailed()){
-            System.out.println("Make screenshot");
 
+    @After
+    public void tearDown(Scenario scenario) {
+        if (scenario.isFailed()) {
+            System.out.println("Make a screenshot...");
         }
-        if (baseCucumberTEst!= null){
-            baseCucumberTEst.driver.quit();
+
+        if (baseCucumberTest.driver != null) {
+            baseCucumberTest.driver.quit();
         }
     }
 }
