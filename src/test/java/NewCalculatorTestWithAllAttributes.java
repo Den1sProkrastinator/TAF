@@ -2,8 +2,6 @@ import data.StaticProvider;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static jdk.nashorn.internal.objects.Global.Infinity;
-
 public class NewCalculatorTestWithAllAttributes extends BaseTest {
 
     @Test
@@ -115,4 +113,8 @@ public class NewCalculatorTestWithAllAttributes extends BaseTest {
         System.out.println("stepf...");
     }
 
+    // ToDo: Отсутствуют тесты деления на 0
+    // ToDo: Название тестовых методов - переделать согласно https://dzone.com/articles/7-popular-unit-test-naming
+    // Todo: Между методами должна быть одна пустая строка
+    // ToDo: Форматирование текста в классе Code -> Reformat Code
 }
